@@ -32,15 +32,6 @@ const navItems = [
       { href: "/docs/usuarios/notificaciones", label: "Notificaciones" },
     ]
   },
-  { 
-    href: "/docs/roles", 
-    label: "Roles",
-    subItems: [
-      { href: "/docs/roles/crear", label: "Crear roles" },
-      { href: "/docs/roles/permisos-sensibles", label: "Permisos sensibles" },
-      { href: "/docs/roles/auditoria", label: "Auditoría" },
-    ]
-  },
   {
     href: "/docs/analisis-precio-unitario",
     label: "Analisis de precio unitario",
@@ -62,6 +53,16 @@ const navItems = [
     ]
   },
   {
+    href: "/docs/compras",
+    label: "Compras",
+    subItems: [
+      { href: "/docs/compras/pedidos", label: "Pedidos" },
+      { href: "/docs/compras/cotizaciones", label: "Cotizaciones" },
+      { href: "/docs/compras/autorizaciones", label: "Autorizaciones" },
+      { href: "/docs/compras/ordenes-de-compra", label: "Ordenes de compra" },
+    ]
+  },
+  {
     href: "/docs/almacen",
     label: "Almacen",
     subItems: [
@@ -70,8 +71,8 @@ const navItems = [
       { href: "/docs/almacen/stock", label: "Stock" },
     ]
   },
-  {
-    href: "/docs/cartera",
+  
+  {    href: "/docs/cartera",
     label: "Cartera",
     subItems: [
       { href: "/docs/cartera/inmuebles", label: "Inmuebles" },
