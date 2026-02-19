@@ -58,6 +58,26 @@ const navItems = [
       { href: "/docs/roles/auditoria", label: "Auditoría" },
     ]
   },
+  {
+    href: "/docs/analisis-precio-unitario",
+    label: "Analisis de precio unitario",
+    subItems: []
+  },
+  {
+    href: "/docs/obra",
+    label: "Obra",
+    subItems: []
+  },
+  {
+    href: "/docs/almacen",
+    label: "Almacen",
+    subItems: []
+  },
+  {
+    href: "/docs/cartera",
+    label: "Cartera",
+    subItems: []
+  },
   { 
     href: "/docs/recursos", 
     label: "Recursos",
