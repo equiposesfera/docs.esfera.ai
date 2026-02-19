@@ -61,22 +61,41 @@ const navItems = [
   {
     href: "/docs/analisis-precio-unitario",
     label: "Analisis de precio unitario",
-    subItems: []
+    subItems: [
+      { href: "/docs/analisis-precio-unitario/items", label: "Items" },
+      { href: "/docs/analisis-precio-unitario/mano-de-obra", label: "Mano de obra" },
+      { href: "/docs/analisis-precio-unitario/materiales-y-servicios", label: "Materiales y servicios" },
+      { href: "/docs/analisis-precio-unitario/equipos-maquinarias-herramientas", label: "Equipos, maquinarias y herramientas" },
+    ]
   },
   {
     href: "/docs/obra",
     label: "Obra",
-    subItems: []
+    subItems: [
+      { href: "/docs/obra/presupuesto", label: "Presupuesto" },
+      { href: "/docs/obra/avances", label: "Avances" },
+      { href: "/docs/obra/planillas", label: "Planillas" },
+      { href: "/docs/obra/retenciones", label: "Retenciones" },
+    ]
   },
   {
     href: "/docs/almacen",
     label: "Almacen",
-    subItems: []
+    subItems: [
+      { href: "/docs/almacen/entradas", label: "Entradas" },
+      { href: "/docs/almacen/salidas", label: "Salidas" },
+      { href: "/docs/almacen/stock", label: "Stock" },
+    ]
   },
   {
     href: "/docs/cartera",
     label: "Cartera",
-    subItems: []
+    subItems: [
+      { href: "/docs/cartera/inmuebles", label: "Inmuebles" },
+      { href: "/docs/cartera/clientes", label: "Clientes" },
+      { href: "/docs/cartera/ventas", label: "Ventas" },
+      { href: "/docs/cartera/galeria", label: "Galeria" },
+    ]
   },
   { 
     href: "/docs/recursos", 
