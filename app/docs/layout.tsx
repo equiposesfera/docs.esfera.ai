@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 
 const navItems = [
   { 
@@ -17,31 +18,13 @@ const navItems = [
       { href: "/docs/primeros-pasos/verificacion", label: "Verificación de email" },
       { href: "/docs/primeros-pasos/suscripcion", label: "Suscripción" },
       { href: "/docs/primeros-pasos/olvido-contrasena", label: "Olvido de contraseña" },
-    ]
-  },
-  { 
-    href: "/docs/empresa", 
-    label: "Empresa",
-    subItems: [
-      { href: "/docs/empresa/datos-basicos", label: "Datos básicos" },
-      { href: "/docs/empresa/contactos", label: "Contactos" },
-      { href: "/docs/empresa/branding", label: "Branding" },
-      { href: "/docs/empresa/configuracion", label: "Configuración" },
-    ]
-  },
-  { 
-    href: "/docs/proyecto", 
-    label: "Proyecto",
-    subItems: [
-      { href: "/docs/proyecto/crear", label: "Crear proyecto" },
-      { href: "/docs/proyecto/plantillas", label: "Plantillas" },
-      { href: "/docs/proyecto/configuracion", label: "Configuración" },
-      { href: "/docs/proyecto/equipo", label: "Equipo" },
+      { href: "/docs/empresa/datos-basicos", label: "Crear tu empresa" },
+      { href: "/docs/proyecto/crear", label: "Crear tu primer proyecto" },
     ]
   },
   { 
     href: "/docs/usuarios", 
-    label: "Usuarios",
+    label: "Usuarios y permisos",
     subItems: [
       { href: "/docs/usuarios/invitar", label: "Invitar usuarios" },
       { href: "/docs/usuarios/roles", label: "Asignar roles" },
@@ -125,13 +108,22 @@ export default function DocsLayout({
     <div className="min-h-screen bg-[#e8e8e8]">
       <div className="mx-auto max-w-[1400px] px-6 py-10 lg:px-10">
         <div className="mb-10 flex items-center justify-between gap-6">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4db8a8]">
-              Esfera.ai Docs
-            </p>
-            <h1 className="text-4xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-              Manual de uso
-            </h1>
+          <div className="flex items-center gap-4">
+            <Image
+              src="/logo-Esfera-texto_250x250.png"
+              alt="Esfera.AI Logo"
+              width={80}
+              height={80}
+              className="h-20 w-20 object-contain"
+            />
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4db8a8]">
+                Esfera.ai Docs
+              </p>
+              <h1 className="text-4xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
+                Manual de uso
+              </h1>
+            </div>
           </div>
           <Link
             href="/"

@@ -1,3 +1,5 @@
+import { url } from "node:inspector";
+
 export default function IntroduccionPage() {
   return (
     <div className="space-y-8">
@@ -49,12 +51,12 @@ export default function IntroduccionPage() {
         <p className="text-lg font-semibold text-[#2d2d2d]">Comencemos a construir con Esfera.AI</p>
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { title: "Cuenta activa", desc: "Configura tu perfil" },
-            { title: "Empresa", desc: "Define tu organización" },
-            { title: "Primer proyecto", desc: "Inicia con confianza" }
+            { title: "Crea tu cuenta", desc: "Configura tu perfil", url: "./primeros-pasos/registro" },
+            { title: "Preguntas frecuentes", desc: "Resuelve tus dudas", url: "./faq" },
+            { title: "Ve nuestro videotutorial", desc: "Aprende a usar Esfera.AI", url: "https://www.youtube.com/watch?v=mZIimzmA8Pc" },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl border border-gray-200 bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6">
-              <p className="font-semibold text-[#2d2d2d]">{item.title}</p>
+              <p className="font-semibold text-[#2d2d2d]"><a href={item.url || "#"} target={item.url?.startsWith("http") ? "_blank" : "_self"} rel={item.url?.startsWith("http") ? "noopener noreferrer" : undefined}>{item.title}</a></p>
               <p className="mt-2 text-sm text-gray-600">{item.desc}</p>
             </div>
           ))}
