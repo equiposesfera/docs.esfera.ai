@@ -10,18 +10,18 @@ const navItems = [
     subItems: []
   },
   { 
-    href: "/docs/cuenta", 
-    label: "Paso 1 · Cuenta",
+    href: "/docs/primeros-pasos", 
+    label: "Primeros pasos",
     subItems: [
-      { href: "/docs/cuenta/registro", label: "Registro de cuenta" },
-      { href: "/docs/cuenta/suscripcion", label: "Suscripción" },
-      { href: "/docs/cuenta/olvido-contrasena", label: "Olvido de contraseña" },
-      { href: "/docs/cuenta/verificacion", label: "Verificación de email" },
+      { href: "/docs/primeros-pasos/registro", label: "Registro de cuenta" },
+      { href: "/docs/primeros-pasos/verificacion", label: "Verificación de email" },
+      { href: "/docs/primeros-pasos/suscripcion", label: "Suscripción" },
+      { href: "/docs/primeros-pasos/olvido-contrasena", label: "Olvido de contraseña" },
     ]
   },
   { 
     href: "/docs/empresa", 
-    label: "Paso 2 · Empresa",
+    label: "Empresa",
     subItems: [
       { href: "/docs/empresa/datos-basicos", label: "Datos básicos" },
       { href: "/docs/empresa/contactos", label: "Contactos" },
@@ -31,7 +31,7 @@ const navItems = [
   },
   { 
     href: "/docs/proyecto", 
-    label: "Paso 3 · Proyecto",
+    label: "Proyecto",
     subItems: [
       { href: "/docs/proyecto/crear", label: "Crear proyecto" },
       { href: "/docs/proyecto/plantillas", label: "Plantillas" },
@@ -41,7 +41,7 @@ const navItems = [
   },
   { 
     href: "/docs/usuarios", 
-    label: "Paso 4 · Usuarios",
+    label: "Usuarios",
     subItems: [
       { href: "/docs/usuarios/invitar", label: "Invitar usuarios" },
       { href: "/docs/usuarios/roles", label: "Asignar roles" },
@@ -51,7 +51,7 @@ const navItems = [
   },
   { 
     href: "/docs/roles", 
-    label: "Paso 5 · Roles",
+    label: "Roles",
     subItems: [
       { href: "/docs/roles/crear", label: "Crear roles" },
       { href: "/docs/roles/permisos-sensibles", label: "Permisos sensibles" },
@@ -150,28 +150,30 @@ export default function DocsLayout({
                 <ul className="space-y-4">
                   {navItems.map((item) => (
                     <li key={item.href}>
-                      <button
-                        onClick={() => item.subItems.length > 0 && toggleExpanded(item.href)}
-                        className="w-full"
-                      >
+                      {item.subItems.length > 0 ? (
+                        <button
+                          onClick={() => toggleExpanded(item.href)}
+                          className="w-full flex items-center justify-between rounded-2xl border border-transparent px-5 py-4 text-lg text-[#2d2d2d] transition hover:border-gray-200 hover:bg-gray-50"
+                        >
+                          <span>{item.label}</span>
+                          <span
+                            className={`text-base text-[#4db8a8] transition-transform ${
+                              expandedItems.includes(item.href) ? "rotate-90" : ""
+                            }`}
+                          >
+                            →
+                          </span>
+                        </button>
+                      ) : (
                         <Link
                           href={item.href}
                           className="flex items-center justify-between rounded-2xl border border-transparent px-5 py-4 text-lg text-[#2d2d2d] transition hover:border-gray-200 hover:bg-gray-50"
                         >
                           <span>{item.label}</span>
-                          {item.subItems.length > 0 ? (
-                            <span
-                              className={`text-base text-[#4db8a8] transition-transform ${
-                                expandedItems.includes(item.href) ? "rotate-90" : ""
-                              }`}
-                            >
-                              →
-                            </span>
-                          ) : (
-                            <span className="text-base text-[#4db8a8]">→</span>
-                          )}
+                          <span className="text-base text-[#4db8a8]">→</span>
                         </Link>
-                      </button>
+                      )}
+                      
                       {item.subItems.length > 0 && (
                         <ul
                           className={`mt-2 space-y-2 border-l-2 border-gray-200 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${
