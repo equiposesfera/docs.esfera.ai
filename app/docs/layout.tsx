@@ -26,10 +26,8 @@ const navItems = [
     href: "/docs/usuarios", 
     label: "Usuarios y permisos",
     subItems: [
-      { href: "/docs/usuarios/invitar", label: "Invitar usuarios" },
-      { href: "/docs/usuarios/roles", label: "Asignar roles" },
-      { href: "/docs/usuarios/permisos", label: "Permisos" },
-      { href: "/docs/usuarios/notificaciones", label: "Notificaciones" },
+      { href: "/docs/usuarios/agregar", label: "Agregar usuarios" },
+      { href: "/docs/usuarios/permisos", label: "Permisos" }
     ]
   },
   {
