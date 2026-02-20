@@ -183,44 +183,114 @@ export default function ItemsAnalisisPage() {
           Componentes de un ítem
         </h3>
         <p className="text-base leading-7 text-gray-700">
-          Independientemente del método que elijas, un ítem completo incluye:
+          Independientemente del método que elijas, <strong>un ítem está compuesto por tres tipos de recursos</strong> que debes haber creado previamente en sus respectivos catálogos:
         </p>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-gray-200 bg-white p-5">
-            <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d]">
+        
+        {/* Nota importante */}
+        <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
+          <h4 className="mb-2 font-semibold text-[#2d2d2d]">🔗 Relación entre catálogos e ítems</h4>
+          <p className="text-sm text-gray-700">
+            Antes de crear ítems desde cero, es importante tener tus catálogos de <strong>materiales y servicios</strong>, <strong>mano de obra</strong>, y <strong>equipos, maquinarias y herramientas</strong> bien configurados. Los ítems se construyen vinculando recursos de estos tres catálogos, especificando cantidades y rendimientos para cada uno.
+          </p>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          <Link href="/docs/analisis-precio-unitario/materiales-y-servicios" className="group">
+            <div className="h-full rounded-2xl border-2 border-[#4db8a8] bg-white p-5 transition-all hover:border-[#3da799] hover:shadow-md">
+              <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d] group-hover:text-[#4db8a8]">
+                <span className="text-xl">📦</span>
+                Materiales y servicios
+              </h4>
+              <p className="mb-3 text-sm text-gray-700">
+                Insumos físicos consumibles (cemento, acero, arena) y servicios contratados (transporte, ensayos, subcontratos).
+              </p>
+              <div className="text-xs text-gray-600">
+                <strong>En el ítem:</strong> Cantidad × Precio unitario
+              </div>
+              <div className="mt-3 text-sm font-semibold text-[#4db8a8] group-hover:underline">
+                Ver catálogo →
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/docs/analisis-precio-unitario/mano-de-obra" className="group">
+            <div className="h-full rounded-2xl border-2 border-[#4db8a8] bg-white p-5 transition-all hover:border-[#3da799] hover:shadow-md">
+              <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d] group-hover:text-[#4db8a8]">
+                <span className="text-xl">👷</span>
+                Mano de obra
+              </h4>
+              <p className="mb-3 text-sm text-gray-700">
+                Personal requerido (oficiales, peones, especialistas) o cuadrillas completas con sus costos horarios.
+              </p>
+              <div className="text-xs text-gray-600">
+                <strong>En el ítem:</strong> Rendimiento (HH) × Costo/hora
+              </div>
+              <div className="mt-3 text-sm font-semibold text-[#4db8a8] group-hover:underline">
+                Ver catálogo →
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/docs/analisis-precio-unitario/equipos-maquinarias-herramientas" className="group">
+            <div className="h-full rounded-2xl border-2 border-[#4db8a8] bg-white p-5 transition-all hover:border-[#3da799] hover:shadow-md">
+              <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d] group-hover:text-[#4db8a8]">
+                <span className="text-xl">🚜</span>
+                Equipos, maquinarias y herramientas
+              </h4>
+              <p className="mb-3 text-sm text-gray-700">
+                Maquinaria pesada, equipos especializados y herramientas necesarias con sus costos de operación.
+              </p>
+              <div className="text-xs text-gray-600">
+                <strong>En el ítem:</strong> Rendimiento (HM) × Costo/hora
+              </div>
+              <div className="mt-3 text-sm font-semibold text-[#4db8a8] group-hover:underline">
+                Ver catálogo →
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Ejemplo visual */}
+        <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+          <h4 className="mb-4 font-semibold text-[#2d2d2d]">📊 Ejemplo: Ítem "Vaciado de concreto f'c=210 kg/cm²"</h4>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 rounded-lg bg-white p-3">
               <span className="text-xl">📦</span>
-              Materiales y servicios
-            </h4>
-            <p className="text-sm text-gray-700">
-              Todos los insumos necesarios con cantidades, unidades y precios unitarios.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-5">
-            <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d]">
+              <div className="flex-1">
+                <div className="mb-1 font-medium text-gray-700">Materiales y servicios:</div>
+                <div className="space-y-1 text-xs text-gray-600">
+                  <div>• Cemento Portland × 8.5 bolsas</div>
+                  <div>• Arena × 0.56 m³</div>
+                  <div>• Grava × 0.84 m³</div>
+                  <div>• Agua × 0.18 m³</div>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 rounded-lg bg-white p-3">
               <span className="text-xl">👷</span>
-              Mano de obra
-            </h4>
-            <p className="text-sm text-gray-700">
-              Personal requerido con rendimientos, jornales y beneficios sociales.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-5">
-            <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d]">
+              <div className="flex-1">
+                <div className="mb-1 font-medium text-gray-700">Mano de obra:</div>
+                <div className="space-y-1 text-xs text-gray-600">
+                  <div>• Oficial albañil × 0.8 HH</div>
+                  <div>• Peón × 1.6 HH</div>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 rounded-lg bg-white p-3">
               <span className="text-xl">🚜</span>
-              Equipos y maquinarias
-            </h4>
-            <p className="text-sm text-gray-700">
-              Maquinaria necesaria con horas de uso y tarifas de alquiler u operación.
-            </p>
+              <div className="flex-1">
+                <div className="mb-1 font-medium text-gray-700">Equipos:</div>
+                <div className="space-y-1 text-xs text-gray-600">
+                  <div>• Mezcladora de concreto × 0.5 HM</div>
+                  <div>• Vibrador de concreto × 0.3 HM</div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="rounded-2xl border border-gray-200 bg-white p-5">
-            <h4 className="mb-3 flex items-center gap-2 font-semibold text-[#2d2d2d]">
-              <span className="text-xl">🔧</span>
-              Herramientas
-            </h4>
-            <p className="text-sm text-gray-700">
-              Herramientas menores calculadas como % de mano de obra o valor específico.
-            </p>
+          <div className="mt-4 rounded-lg bg-[#4db8a8] px-4 py-2 text-center">
+            <span className="text-sm font-semibold text-white">
+              Precio unitario total = Σ(Materiales) + Σ(Mano de obra) + Σ(Equipos)
+            </span>
           </div>
         </div>
       </div>
