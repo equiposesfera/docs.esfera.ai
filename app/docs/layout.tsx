@@ -38,6 +38,9 @@ const navItems = [
       { href: "/docs/analisis-precio-unitario/mano-de-obra", label: "Mano de obra" },
       { href: "/docs/analisis-precio-unitario/materiales-y-servicios", label: "Materiales y servicios" },
       { href: "/docs/analisis-precio-unitario/equipos-maquinarias-herramientas", label: "Equipos, maquinarias y herramientas" },
+      { href: "/docs/analisis-precio-unitario/unidades-de-medida", label: "Unidades de medida" },
+      { href: "/docs/analisis-precio-unitario/grupos", label: "Grupos" },
+      { href: "/docs/analisis-precio-unitario/categorias", label: "Categorías" },
     ]
   },
   {
