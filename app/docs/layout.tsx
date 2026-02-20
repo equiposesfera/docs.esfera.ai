@@ -82,11 +82,6 @@ const navItems = [
     ]
   },
   { 
-    href: "/docs/recursos", 
-    label: "Recursos",
-    subItems: []
-  },
-  { 
     href: "/docs/faq", 
     label: "FAQ",
     subItems: []
