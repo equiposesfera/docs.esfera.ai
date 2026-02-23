@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  docs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: esfera-docs-app
+    ports:
+      - "10100:10100"
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:10100', (res) => {if (res.statusCode !== 200) throw new Error(res.statusCode)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - esfera-net
+    # Optional: Add volume for development with hot reload
+    # volumes:
+    #   - .:/app
+    #   - /app/node_modules
+    #   - /app/.next
+
+networks:
+  esfera-net:
+    driver: bridge
+    external: true
