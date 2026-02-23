@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import styles from "./layout.module.css";
 
 const navItems = [
@@ -100,54 +101,66 @@ export default function DocsLayout({
   children: React.ReactNode;
 }>) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const pathname = usePathname();
 
   const toggleExpanded = (href: string) => {
     setExpandedItems((prev) =>
       prev.includes(href) ? prev.filter((h) => h !== href) : [...prev, href]
     );
   };
+
+  const isActive = (href: string) => {
+    return pathname === href || pathname.startsWith(href + "/");
+  };
+
+  // Expandir automáticamente la sección activa cuando cambia la ruta
+  useEffect(() => {
+    for (const item of navItems) {
+      if (item.subItems.length > 0) {
+        if (item.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href + "/"))) {
+          setExpandedItems([item.href]);
+          return;
+        }
+      }
+    }
+    setExpandedItems([]);
+  }, [pathname]);
   return (
     <div className="min-h-screen bg-[#e8e8e8]">
       <div className="mx-auto max-w-[1400px] px-6 py-10 lg:px-10">
-        <div className="mb-10 flex items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <Image
-              src="/logo-Esfera-texto_250x250.png"
-              alt="Esfera.AI Logo"
-              width={80}
-              height={80}
-              className="h-20 w-20 object-contain"
-            />
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4db8a8]">
-                Esfera.ai Docs
-              </p>
-              <h1 className="text-4xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-                Manual de uso
-              </h1>
-            </div>
-          </div>
-          <Link
-            href="/"
-            className="rounded-full border border-[#4db8a8] bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#2d2d2d] transition hover:bg-[#4db8a8] hover:text-white"
-          >
-            Inicio
-          </Link>
-        </div>
-        <div className="grid gap-12 lg:grid-cols-[380px_1fr]">
-          <aside className="lg:sticky lg:top-10 lg:self-start">
+        
+        <div className="grid gap-10 lg:grid-cols-[380px_1fr]">
+          <aside className="lg:sticky lg:top-6 lg:self-start">
             <div className="rounded-3xl border border-gray-300 bg-white p-10 shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#4db8a8]">
-                Secciones
-              </p>
-              <nav className={`mt-8 max-h-[calc(100vh-300px)] overflow-hidden group ${styles.scrollableNav}`}>
-                <ul className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/logo-Esfera-texto_250x250.png"
+                  alt="Esfera.AI Logo"
+                  width={80}
+                  height={80}
+                  className="h-17 w-17 object-contain"
+                />
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#4db8a8]">
+                    Esfera.ai Docs
+                  </p>
+                  <h1 className="text-3xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
+                    Manual de uso
+                  </h1>
+                </div>
+              </div>
+              <nav className={`mt-8 max-h-[calc(100vh-250px)] overflow-hidden group ${styles.scrollableNav}`}>
+                <ul className="space-y-2">
                   {navItems.map((item) => (
                     <li key={item.href}>
                       {item.subItems.length > 0 ? (
                         <button
                           onClick={() => toggleExpanded(item.href)}
-                          className="w-full flex items-center justify-between rounded-2xl border border-transparent px-5 py-4 text-lg text-[#2d2d2d] transition hover:border-gray-200 hover:bg-gray-50"
+                          className={`w-full flex items-center justify-between rounded-2xl border px-5 py-4 text-lg transition ${
+                            isActive(item.href)
+                              ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d] font-semibold"
+                              : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+                          }`}
                         >
                           <span>{item.label}</span>
                           <span
@@ -161,7 +174,11 @@ export default function DocsLayout({
                       ) : (
                         <Link
                           href={item.href}
-                          className="flex items-center justify-between rounded-2xl border border-transparent px-5 py-4 text-lg text-[#2d2d2d] transition hover:border-gray-200 hover:bg-gray-50"
+                          className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-lg transition ${
+                            isActive(item.href)
+                              ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d] font-semibold"
+                              : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+                          }`}
                         >
                           <span>{item.label}</span>
                           <span className="text-base text-[#4db8a8]">→</span>
@@ -178,7 +195,11 @@ export default function DocsLayout({
                             <li key={subItem.href}>
                               <Link
                                 href={subItem.href}
-                                className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
+                                className={`block rounded-lg px-4 py-2 text-sm transition ${
+                                  isActive(subItem.href)
+                                    ? "bg-[#4db8a8] text-white font-semibold"
+                                    : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
+                                }`}
                               >
                                 {subItem.label}
                               </Link>
