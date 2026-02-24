@@ -1,10 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import styles from "./layout.module.css";
 
 const navItems = [
   { 
@@ -50,8 +48,8 @@ const navItems = [
     label: "Presupuesto",
     subItems: [
       { href: "/docs/presupuesto/presupuesto", label: "Presupuesto" },
-      { href: "/docs/presupuesto/computo", label: "Computo" },
-      { href: "/docs/presupuesto/ejecucion", label: "Ejecucion" },
+      { href: "/docs/presupuesto/computo", label: "Cómputo" },
+      { href: "/docs/presupuesto/ejecucion", label: "Ejecución" },
       { href: "/docs/presupuesto/cronograma", label: "Cronograma" },
     ]
   },
@@ -83,6 +81,7 @@ const navItems = [
       { href: "/docs/almacen/stock", label: "Stock" },
     ]
   },
+  
   {    href: "/docs/cartera",
     label: "Cartera",
     subItems: [
@@ -91,11 +90,6 @@ const navItems = [
       { href: "/docs/cartera/ventas", label: "Ventas" },
       { href: "/docs/cartera/galeria", label: "Galeria" },
     ]
-  },
-  {
-    href: "/docs/recursos-visuales",
-    label: "Recursos visuales",
-    subItems: []
   },
   { 
     href: "/docs/faq", 
@@ -110,150 +104,54 @@ export default function DocsLayout({
   children: React.ReactNode;
 }>) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
 
   const toggleExpanded = (href: string) => {
     setExpandedItems((prev) =>
       prev.includes(href) ? prev.filter((h) => h !== href) : [...prev, href]
     );
   };
-
-  const isActive = (href: string) => {
-    return pathname === href || pathname.startsWith(href + "/");
-  };
-
-  // Expandir automáticamente la sección activa cuando cambia la ruta
-  useEffect(() => {
-    for (const item of navItems) {
-      if (item.subItems.length > 0) {
-        if (item.subItems.some(subItem => pathname === subItem.href || pathname.startsWith(subItem.href + "/"))) {
-          setExpandedItems([item.href]);
-          return;
-        }
-      }
-    }
-    setExpandedItems([]);
-  }, [pathname]);
-
-  // Cerrar menú móvil al cambiar de ruta
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [pathname]);
   return (
     <div className="min-h-screen bg-[#e8e8e8]">
-      <div className="mx-auto max-w-[1400px] px-4 py-6 lg:px-10 lg:py-10">
-        
-        {/* Mobile Header */}
-        <div className="mb-6 flex items-center justify-between lg:hidden">
-          <div className="flex items-center gap-3">
+      <div className="mx-auto max-w-[1400px] px-6 py-10 lg:px-10">
+        <div className="mb-10 flex items-center justify-between gap-6">
+          <div className="flex items-center gap-4">
             <Image
               src="/logo-Esfera-texto_250x250.png"
               alt="Esfera.AI Logo"
-              width={50}
-              height={50}
-              className="h-12 w-12 object-contain"
+              width={80}
+              height={80}
+              className="h-20 w-20 object-contain"
             />
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#4db8a8]">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#4db8a8]">
                 Esfera.ai Docs
               </p>
-              <h1 className="text-xl font-semibold text-[#2d2d2d]">
+              <h1 className="text-4xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
                 Manual de uso
               </h1>
             </div>
           </div>
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-lg border border-[#4db8a8] bg-white p-2 text-[#4db8a8] transition hover:bg-[#4db8a8] hover:text-white"
-            aria-label="Toggle menu"
+          <Link
+            href="/"
+            className="rounded-full border border-[#4db8a8] bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#2d2d2d] transition hover:bg-[#4db8a8] hover:text-white"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              )}
-            </svg>
-          </button>
+            Inicio
+          </Link>
         </div>
-
-        {/* Mobile Menu Overlay */}
-        {mobileMenuOpen && (
-          <div
-            className="fixed inset-0 z-40 bg-black bg-opacity-50 lg:hidden"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-        )}
-        
-        <div className="grid gap-10 lg:grid-cols-[380px_1fr]">
-          {/* Sidebar */}
-          <aside className={`
-            fixed inset-y-0 left-0 z-50 w-[85%] max-w-sm transform overflow-y-auto bg-[#e8e8e8] p-4 transition-transform duration-300 ease-in-out
-            lg:static lg:z-auto lg:w-auto lg:max-w-none lg:transform-none lg:overflow-visible lg:p-0
-            lg:sticky lg:top-6 lg:self-start
-            ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-          `}>
-            <div className="rounded-3xl border border-gray-300 bg-white p-6 shadow-sm lg:p-10">
-              {/* Desktop Header */}
-              <div className="hidden items-center gap-3 lg:flex">
-                <Image
-                  src="/logo-Esfera-texto_250x250.png"
-                  alt="Esfera.AI Logo"
-                  width={80}
-                  height={80}
-                  className="h-17 w-17 object-contain"
-                />
-                <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#4db8a8]">
-                    Esfera.ai Docs
-                  </p>
-                  <h1 className="text-3xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-                    Manual de uso
-                  </h1>
-                </div>
-              </div>
-              
-              {/* Mobile Close Button */}
-              <div className="mb-4 flex items-center justify-between lg:hidden">
-                <h2 className="text-lg font-semibold text-[#2d2d2d]">Menú</h2>
-                <button
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-lg p-1 text-gray-500 hover:bg-gray-100"
-                >
-                  <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-
-              <nav className={`mt-4 max-h-[calc(100vh-250px)] overflow-hidden group lg:mt-8 ${styles.scrollableNav}`}>
-                <ul className="space-y-2">
+        <div className="grid gap-12 lg:grid-cols-[380px_1fr]">
+          <aside className="lg:sticky lg:top-10 lg:self-start">
+            <div className="rounded-3xl border border-gray-300 bg-white p-10 shadow-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#4db8a8]">
+                Secciones
+              </p>
+              <nav className="mt-8">
+                <ul className="space-y-4">
                   {navItems.map((item) => (
                     <li key={item.href}>
                       {item.subItems.length > 0 ? (
                         <button
                           onClick={() => toggleExpanded(item.href)}
-                          className={`w-full flex items-center justify-between rounded-2xl border px-4 py-3 text-base transition lg:px-5 lg:py-4 lg:text-lg ${
-                            isActive(item.href)
-                              ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d] font-semibold"
-                              : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
-                          }`}
+                          className="w-full flex items-center justify-between rounded-2xl border border-transparent px-5 py-4 text-lg text-[#2d2d2d] transition hover:border-gray-200 hover:bg-gray-50"
                         >
                           <span>{item.label}</span>
                           <span
@@ -267,11 +165,7 @@ export default function DocsLayout({
                       ) : (
                         <Link
                           href={item.href}
-                          className={`flex items-center justify-between rounded-2xl border px-4 py-3 text-base transition lg:px-5 lg:py-4 lg:text-lg ${
-                            isActive(item.href)
-                              ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d] font-semibold"
-                              : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
-                          }`}
+                          className="flex items-center justify-between rounded-2xl border border-transparent px-5 py-4 text-lg text-[#2d2d2d] transition hover:border-gray-200 hover:bg-gray-50"
                         >
                           <span>{item.label}</span>
                           <span className="text-base text-[#4db8a8]">→</span>
@@ -288,11 +182,7 @@ export default function DocsLayout({
                             <li key={subItem.href}>
                               <Link
                                 href={subItem.href}
-                                className={`block rounded-lg px-4 py-2 text-sm transition ${
-                                  isActive(subItem.href)
-                                    ? "bg-[#4db8a8] text-white font-semibold"
-                                    : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
-                                }`}
+                                className="block rounded-lg px-4 py-2 text-sm text-gray-700 transition hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
                               >
                                 {subItem.label}
                               </Link>
@@ -306,7 +196,7 @@ export default function DocsLayout({
               </nav>
             </div>
           </aside>
-          <main className="rounded-3xl border border-gray-300 bg-white p-6 shadow-lg md:p-12 lg:p-20">
+          <main className="rounded-3xl border border-gray-300 bg-white p-12 shadow-lg md:p-20">
             {children}
           </main>
         </div>
