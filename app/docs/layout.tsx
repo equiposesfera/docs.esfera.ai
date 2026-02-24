@@ -120,6 +120,7 @@ export default function DocsLayout({
   children: React.ReactNode;
 }>) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const toggleExpanded = (href: string) => {
@@ -129,11 +130,148 @@ export default function DocsLayout({
   };
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
+
+  const renderNavList = () => (
+    <ul className="space-y-4">
+      {navItems.map((item) => (
+        <li key={item.href}>
+          {item.subItems.length > 0 ? (
+            <button
+              onClick={() => toggleExpanded(item.href)}
+              className={`w-full flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${
+                isActive(item.href)
+                  ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
+                  : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+              }`}
+            >
+              <span>{item.label}</span>
+              <span
+                className={`text-sm text-[#4db8a8] transition-transform ${
+                  expandedItems.includes(item.href) ? "rotate-90" : ""
+                }`}
+              >
+                →
+              </span>
+            </button>
+          ) : (
+            <Link
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${
+                isActive(item.href)
+                  ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
+                  : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+              }`}
+            >
+              <span>{item.label}</span>
+              <span className="text-sm text-[#4db8a8]">→</span>
+            </Link>
+          )}
+
+          {item.subItems.length > 0 && (
+            <ul
+              className={`mt-2 space-y-2 border-l-2 border-gray-200 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${
+                expandedItems.includes(item.href) ? "max-h-96" : "max-h-0"
+              }`}
+            >
+              {item.subItems.map((subItem) => (
+                <li key={subItem.href}>
+                  <Link
+                    href={subItem.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block rounded-lg px-4 py-2 text-xs transition ${
+                      isActive(subItem.href)
+                        ? "bg-[#d4f1eb] text-[#2d2d2d]"
+                        : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
+                    }`}
+                  >
+                    {subItem.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <div className="min-h-screen bg-[#e8e8e8]">
       <div className="mx-auto max-w-[1400px] px-6 py-10 lg:px-10">
+        <div className="mb-6 flex items-center justify-between lg:hidden">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo-Esfera-texto_250x250.png"
+              alt="Esfera.AI Logo"
+              width={48}
+              height={48}
+              className="h-12 w-12 object-contain"
+            />
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4db8a8]">
+                Esfera.ai Docs
+              </p>
+              <h1 className="text-lg font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
+                Manual de uso
+              </h1>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="rounded-xl border border-gray-200 bg-white px-3 py-2 text-sm font-semibold text-[#2d2d2d] shadow-sm"
+            aria-label="Abrir menu"
+          >
+            ☰
+          </button>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="fixed inset-0 z-50 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="absolute inset-0 bg-black/40"
+              aria-label="Cerrar menu"
+            />
+            <div className="relative h-full w-[85%] max-w-sm bg-white p-6 shadow-xl">
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Image
+                    src="/logo-Esfera-texto_250x250.png"
+                    alt="Esfera.AI Logo"
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 object-contain"
+                  />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4db8a8]">
+                      Esfera.ai Docs
+                    </p>
+                    <h2 className="text-lg font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
+                      Menu
+                    </h2>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-lg border border-gray-200 px-3 py-1 text-sm text-gray-700"
+                  aria-label="Cerrar menu"
+                >
+                  ✕
+                </button>
+              </div>
+              <nav className={`pr-2 ${styles.scrollableNav}`} style={{ maxHeight: "75vh" }}>
+                {renderNavList()}
+              </nav>
+            </div>
+          </div>
+        )}
+
         <div className="grid gap-10 lg:grid-cols-[380px_1fr]">
-          <aside className="lg:sticky lg:top-8 lg:self-start">
+          <aside className="hidden lg:block lg:sticky lg:top-8 lg:self-start">
             <div className="rounded-3xl border border-gray-300 bg-white p-10 shadow-sm">
               <div className="flex items-center gap-3">
                 <Image
@@ -153,66 +291,7 @@ export default function DocsLayout({
                 </div>
               </div>
               <nav className={`mt-8 pr-2 ${styles.scrollableNav}`} style={{ maxHeight: "70vh" }}>
-                <ul className="space-y-4">
-                  {navItems.map((item) => (
-                    <li key={item.href}>
-                      {item.subItems.length > 0 ? (
-                        <button
-                          onClick={() => toggleExpanded(item.href)}
-                          className={`w-full flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${
-                            isActive(item.href)
-                              ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
-                              : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
-                          }`}
-                        >
-                          <span>{item.label}</span>
-                          <span
-                            className={`text-sm text-[#4db8a8] transition-transform ${
-                              expandedItems.includes(item.href) ? "rotate-90" : ""
-                            }`}
-                          >
-                            →
-                          </span>
-                        </button>
-                      ) : (
-                        <Link
-                          href={item.href}
-                          className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${
-                            isActive(item.href)
-                              ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
-                              : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
-                          }`}
-                        >
-                          <span>{item.label}</span>
-                          <span className="text-sm text-[#4db8a8]">→</span>
-                        </Link>
-                      )}
-                      
-                      {item.subItems.length > 0 && (
-                        <ul
-                          className={`mt-2 space-y-2 border-l-2 border-gray-200 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${
-                            expandedItems.includes(item.href) ? "max-h-96" : "max-h-0"
-                          }`}
-                        >
-                          {item.subItems.map((subItem) => (
-                            <li key={subItem.href}>
-                              <Link
-                                href={subItem.href}
-                                className={`block rounded-lg px-4 py-2 text-xs transition ${
-                                  isActive(subItem.href)
-                                    ? "bg-[#d4f1eb] text-[#2d2d2d]"
-                                    : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
-                                }`}
-                              >
-                                {subItem.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                {renderNavList()}
               </nav>
             </div>
           </aside>
