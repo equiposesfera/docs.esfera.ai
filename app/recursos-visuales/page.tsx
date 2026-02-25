@@ -9,6 +9,9 @@ interface Video {
 }
 
 const videos: Video[] = [
+  { titulo: 'Lanzamiento de Esfera', videoId: 'FijHCVQPuB4' },
+  { titulo: 'Comienza a Usar Esfera: Guía de Acceso', videoId: 'dBdNSHsMbbk' },
+  { titulo: 'Flujo de Trabajo', videoId: 'mZIimzmA8Pc' },
   { titulo: 'EMPRESA', videoId: 'C-MrdJxmaUA' },
   { titulo: 'PROYECTOS', videoId: 'Ws7EAQ2tMGQ' },
   { titulo: 'USUARIOS', videoId: 'tMOWL29otuA' },
@@ -57,7 +60,15 @@ export default function RecursosVisuales() {
     <div className={styles.container}>
       <h1>Recursos Visuales</h1>
       <p className={styles.description}>Haz clic en cualquier video para reproducirlo en pantalla completa</p>
-
+      {/* Nota importante */}
+      <div className="rounded-2xl border-l-4 border-[#f59e0b] bg-orange-50 px-6 py-4">
+        <h4 className="mb-2 font-semibold text-[#2d2d2d]">⚠️ Nota importante</h4>
+        <ul className="list-inside list-disc space-y-1 text-sm text-gray-700">
+          <li>Como el sistema de Esfera.AI está en actualización continua, algunos contenidos pueden tener alguna variación.</li>
+          <li>Estamos trabajando constantemente para mantener la información actualizada.</li>
+          <li>Si tienes alguna dudas, no dudes en contactar al <a href="https://wa.me/15557021023?text=Ayuda" target="_blank" rel="noopener noreferrer" className="font-bold">soporte</a> para poder ayudarte.</li>
+        </ul>
+      </div>
       <div className={styles.grid}>
         {videos.map((video) => (
           <div key={video.videoId} style={{ cursor: 'pointer' }} onClick={() => handleVideoClick(video)}>

@@ -13,113 +13,113 @@ const navItems = [
     subItems: []
   },
   { 
-    href: "/flujo-trabajo", 
+    href: "/docs/flujo-trabajo", 
     label: "Flujo de trabajo",
     subItems: []
   },
   { 
-    href: "/primeros-pasos", 
+    href: "/docs/primeros-pasos", 
     label: "Primeros pasos",
     subItems: [
-      { href: "/primeros-pasos/registro", label: "Registro de cuenta" },
-      { href: "/primeros-pasos/verificacion", label: "Verificación de email" },
-      { href: "/primeros-pasos/suscripcion", label: "Suscripción" },
-      { href: "/primeros-pasos/olvido-contrasena", label: "Olvido de contraseña" },
-      { href: "/primeros-pasos/crear-empresa", label: "Crear tu empresa" },
-      { href: "/primeros-pasos/crear-primer-proyecto", label: "Crear tu primer proyecto" },
+      { href: "/docs/primeros-pasos/registro", label: "Registro de cuenta" },
+      { href: "/docs/primeros-pasos/verificacion", label: "Verificación de email" },
+      { href: "/docs/primeros-pasos/suscripcion", label: "Suscripción" },
+      { href: "/docs/primeros-pasos/olvido-contrasena", label: "Olvido de contraseña" },
+      { href: "/docs/primeros-pasos/crear-empresa", label: "Crear tu empresa" },
+      { href: "/docs/primeros-pasos/crear-primer-proyecto", label: "Crear tu primer proyecto" },
     ]
   },
   { 
-    href: "/usuarios", 
+    href: "/docs/usuarios", 
     label: "Usuarios y permisos",
     subItems: [
-      { href: "/usuarios/agregar", label: "Agregar usuarios" },
-      { href: "/usuarios/permisos", label: "Permisos" }
+      { href: "/docs/usuarios/agregar", label: "Agregar usuarios" },
+      { href: "/docs/usuarios/permisos", label: "Permisos" }
     ]
   },
   {
-    href: "/personas",
+    href: "/docs/personas",
     label: "Personas",
     subItems: [
-      { href: "/personas/comitentes", label: "Comitentes" },
-      { href: "/personas/contratistas", label: "Contratistas" },
-      { href: "/personas/proveedores", label: "Proveedores" },
+      { href: "/docs/personas/comitentes", label: "Comitentes" },
+      { href: "/docs/personas/contratistas", label: "Contratistas" },
+      { href: "/docs/personas/proveedores", label: "Proveedores" },
     ]
   },
   {
-    href: "/analisis-precio-unitario",
+    href: "/docs/analisis-precio-unitario",
     label: "Analisis de precio unitario",
     subItems: [
-      { href: "/analisis-precio-unitario/items", label: "Items" },
-      { href: "/analisis-precio-unitario/mano-de-obra", label: "Mano de obra" },
-      { href: "/analisis-precio-unitario/materiales-y-servicios", label: "Materiales y servicios" },
-      { href: "/analisis-precio-unitario/equipos-maquinarias-herramientas", label: "Equipos, maquinarias y herramientas" },
-      { href: "/analisis-precio-unitario/unidades-de-medida", label: "Unidades de medida" },
-      { href: "/analisis-precio-unitario/grupos", label: "Grupos" },
-      { href: "/analisis-precio-unitario/categorias", label: "Categorías" },
+      { href: "/docs/analisis-precio-unitario/items", label: "Items" },
+      { href: "/docs/analisis-precio-unitario/mano-de-obra", label: "Mano de obra" },
+      { href: "/docs/analisis-precio-unitario/materiales-y-servicios", label: "Materiales y servicios" },
+      { href: "/docs/analisis-precio-unitario/equipos-maquinarias-herramientas", label: "Equipos, maquinarias y herramientas" },
+      { href: "/docs/analisis-precio-unitario/unidades-de-medida", label: "Unidades de medida" },
+      { href: "/docs/analisis-precio-unitario/grupos", label: "Grupos" },
+      { href: "/docs/analisis-precio-unitario/categorias", label: "Categorías" },
     ]
   },
   {
-    href: "/presupuesto",
+    href: "/docs/presupuesto",
     label: "Presupuesto",
     subItems: [
-      { href: "/presupuesto/computo", label: "Cómputo" },
-      { href: "/presupuesto/presupuesto", label: "Presupuesto" },
-      { href: "/presupuesto/ejecucion", label: "Ejecución" },
-      { href: "/presupuesto/cronograma", label: "Cronograma" },
+      { href: "/docs/presupuesto/computo", label: "Cómputo" },
+      { href: "/docs/presupuesto/presupuesto", label: "Presupuesto" },
+      { href: "/docs/presupuesto/ejecucion", label: "Ejecución" },
+      { href: "/docs/presupuesto/cronograma", label: "Cronograma" },
     ]
   },
   {
-    href: "/obra",
+    href: "/docs/obra",
     label: "Obra",
     subItems: [
-      { href: "/obra/avances", label: "Avances" },
-      { href: "/obra/planillas", label: "Planillas" },
-      { href: "/obra/retenciones", label: "Retenciones" },
+      { href: "/docs/obra/avances", label: "Avances" },
+      { href: "/docs/obra/planillas", label: "Planillas" },
+      { href: "/docs/obra/retenciones", label: "Retenciones" },
     ]
   },
   {
-    href: "/compras",
+    href: "/docs/compras",
     label: "Compras",
     subItems: [
-      { href: "/compras/pedidos", label: "Pedidos" },
-      { href: "/compras/cotizaciones", label: "Cotizaciones" },
-      { href: "/compras/autorizaciones", label: "Autorizaciones" },
-      { href: "/compras/ordenes-de-compra", label: "Ordenes de compra" },
+      { href: "/docs/compras/pedidos", label: "Pedidos" },
+      { href: "/docs/compras/cotizaciones", label: "Cotizaciones" },
+      { href: "/docs/compras/autorizaciones", label: "Autorizaciones" },
+      { href: "/docs/compras/ordenes-de-compra", label: "Ordenes de compra" },
     ]
   },
   {
-    href: "/almacen",
+    href: "/docs/almacen",
     label: "Almacen",
     subItems: [
-      { href: "/almacen/entradas", label: "Entradas" },
-      { href: "/almacen/salidas", label: "Salidas" },
-      { href: "/almacen/stock", label: "Stock" },
+      { href: "/docs/almacen/entradas", label: "Entradas" },
+      { href: "/docs/almacen/salidas", label: "Salidas" },
+      { href: "/docs/almacen/stock", label: "Stock" },
     ]
   },
   
-  {    href: "/cartera",
+  {    href: "/docs/cartera",
     label: "Cartera",
     subItems: [
-      { href: "/cartera/inmuebles", label: "Inmuebles" },
-      { href: "/cartera/clientes", label: "Clientes" },
-      { href: "/cartera/ventas", label: "Ventas" },
-      { href: "/cartera/galeria", label: "Galeria" },
+      { href: "/docs/cartera/inmuebles", label: "Inmuebles" },
+      { href: "/docs/cartera/clientes", label: "Clientes" },
+      { href: "/docs/cartera/ventas", label: "Ventas" },
+      { href: "/docs/cartera/galeria", label: "Galeria" },
     ]
   },
   { 
-    href: "/recursos-visuales", 
+    href: "/docs/recursos-visuales", 
     label: "Recursos Visuales",
     subItems: []
   },
   { 
-    href: "/faq", 
+    href: "/docs/faq", 
     label: "FAQ",
     subItems: []
   },
 ];
 
-export function DocsLayout({
+export default function DocsLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
