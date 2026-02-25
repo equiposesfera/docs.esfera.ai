@@ -121,6 +121,7 @@ export default function DocsLayout({
 }>) {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
 
   const toggleExpanded = (href: string) => {
@@ -131,9 +132,46 @@ export default function DocsLayout({
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
 
+  const filteredNavItems = searchQuery.trim()
+    ? navItems
+        .map((item) => {
+          const q = searchQuery.toLowerCase();
+          const topMatch = item.label.toLowerCase().includes(q);
+          const matchingSubItems = item.subItems.filter((s) =>
+            s.label.toLowerCase().includes(q)
+          );
+          if (topMatch) return item;
+          if (matchingSubItems.length > 0)
+            return { ...item, subItems: matchingSubItems };
+          return null;
+        })
+        .filter(Boolean) as typeof navItems
+    : navItems;
+
+  const renderSearchBox = () => (
+    <div className="relative mb-6">
+      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+        🔍
+      </span>
+      <input
+        type="search"
+        placeholder="Buscar en la documentación..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="w-full rounded-2xl border border-gray-200 bg-gray-50 py-3 pl-10 pr-4 text-sm text-[#2d2d2d] outline-none transition focus:border-[#4db8a8] focus:bg-white focus:ring-2 focus:ring-[#4db8a8]/20"
+      />
+    </div>
+  );
+
   const renderNavList = () => (
-    <ul className="space-y-4">
-      {navItems.map((item) => (
+    <>
+      {filteredNavItems.length === 0 && (
+        <p className="rounded-2xl border border-gray-200 px-5 py-4 text-sm text-gray-500">
+          Sin resultados para &ldquo;{searchQuery}&rdquo;
+        </p>
+      )}
+      <ul className="space-y-4">
+        {filteredNavItems.map((item) => (
         <li key={item.href}>
           {item.subItems.length > 0 ? (
             <button
@@ -171,7 +209,7 @@ export default function DocsLayout({
           {item.subItems.length > 0 && (
             <ul
               className={`mt-2 space-y-2 border-l-2 border-gray-200 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${
-                expandedItems.includes(item.href) ? "max-h-96" : "max-h-0"
+                expandedItems.includes(item.href) || searchQuery.trim() ? "max-h-96" : "max-h-0"
               }`}
             >
               {item.subItems.map((subItem) => (
@@ -194,6 +232,7 @@ export default function DocsLayout({
         </li>
       ))}
     </ul>
+    </>
   );
 
   return (
@@ -264,6 +303,7 @@ export default function DocsLayout({
                 </button>
               </div>
               <nav className={`pr-2 ${styles.scrollableNav}`} style={{ maxHeight: "75vh" }}>
+                {renderSearchBox()}
                 {renderNavList()}
               </nav>
             </div>
@@ -291,6 +331,7 @@ export default function DocsLayout({
                 </div>
               </div>
               <nav className={`mt-8 pr-2 ${styles.scrollableNav}`} style={{ maxHeight: "70vh" }}>
+                {renderSearchBox()}
                 {renderNavList()}
               </nav>
             </div>
