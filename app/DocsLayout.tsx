@@ -345,6 +345,22 @@ export function DocsLayout({
             {children}
           </main>
         </div>
+
+        {/* WhatsApp Floating Button */}
+        <a
+          href="https://wa.me/15557021023?text=Ayuda"
+          className={styles.whatsappBtn}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chatea con nosotros en WhatsApp"
+        >
+          <Image
+            src="/WhatsApp_icon.png"
+            alt="WhatsApp"
+            width={32}
+            height={32}
+          />
+        </a>
       </div>
     </div>
   );
