@@ -109,7 +109,7 @@ const navItems = [
   },
   { 
     href: "/recursos-visuales", 
-    label: "Recursos Visuales",
+    label: "Video Tutoriales",
     subItems: []
   },
   { 

@@ -6,43 +6,44 @@ import styles from './recursos-visuales.module.css';
 interface Video {
   titulo: string;
   videoId: string;
+  fechaEmision: string;
 }
 
 const videos: Video[] = [
-  { titulo: 'EMPRESA', videoId: 'C-MrdJxmaUA' },
-  { titulo: 'PROYECTOS', videoId: 'Ws7EAQ2tMGQ' },
-  { titulo: 'USUARIOS', videoId: 'tMOWL29otuA' },
-  { titulo: 'IMPORTAR ITEMS', videoId: 'lz1SPQfi7l0' },
-  { titulo: 'CREAR ITEMS', videoId: '5SBE7Gv2Vfc' },
-  { titulo: 'EDITAR ITEMS', videoId: 'v0IdQ8NvfNc' },
-  { titulo: 'MATERIALES Y SERVICIOS', videoId: 'b9X5UVZ8as0' },
-  { titulo: 'MANO DE OBRA', videoId: 'JiF_20kk2eQ' },
-  { titulo: 'EQUIPOS, MAQUINARIAS Y HERRAMIENTAS', videoId: 'kQwHqxePNIY' },
-  { titulo: 'GRUPOS', videoId: 'tcah8wj8yfQ' },
-  { titulo: 'UNIDADES DE MEDIDA', videoId: 'TrJwHe5rDso' },
-  { titulo: 'CATEGORIAS', videoId: 'KiQvy3VUrTE' },
-  { titulo: 'INTRODUCCION A PRESUPUESTO', videoId: 'PjS3cl1TGAE' },
-  { titulo: 'COMPUTO', videoId: 'X6r6SeEBWlU' },
-  { titulo: 'PRESUPUESTO', videoId: 'dyAeOlyZjwU' },
-  { titulo: 'COMITENTES', videoId: 'WNMwOKR_WFk' },
-  { titulo: 'PROVEEDORES', videoId: '_S2D2gFLEgo' },
-  { titulo: 'CONTRATISTAS', videoId: 'f-49RiJD-Bk' },
-  { titulo: 'DOCUMENTOS', videoId: 'ZmGDD_GGuxE' },
-  { titulo: 'CONFIGURACION', videoId: '76XuXDEw958' },
-  { titulo: 'PEDIDOS', videoId: 'KQZJXFeJlaU' },
-  { titulo: 'COTIZACIONES', videoId: '1lu5ErTXkYs' },
-  { titulo: 'AUTORIZACION DE COTIZACIONES', videoId: 'vryFefyp9-4' },
-  { titulo: 'ORDEN DE COMPRA', videoId: 'Mx1v1Z-KTFk' },
-  { titulo: 'ENTRADA DE ALMACEN', videoId: 'AsP7iaLiPRM' },
-  { titulo: 'SALIDAS DE ALMACEN', videoId: 'ulQKkzjDDhs' },
-  { titulo: 'STOCK DE ALMACEN', videoId: 'fvMnDykjyHI' },
-  { titulo: 'AVANCES', videoId: '1GHdjH325PE' },
-  { titulo: 'PLANILLAS', videoId: '02tjIGB3vSY' },
-  { titulo: 'RETENCIONES', videoId: '6uauTGyrlbY' },
-  { titulo: 'INMUEBLES', videoId: 'vv-ZOlcDw50' },
-  { titulo: 'CLIENTES', videoId: 'aYI_MNy9o0E' },
-  { titulo: 'VENTA DE INMUEBLES', videoId: 'L4PTFrbCg74' },
-  { titulo: 'GALERIA DE INMUEBLES', videoId: 'fkD-lVyvfHI' },
+  { titulo: 'EMPRESA', videoId: 'C-MrdJxmaUA', fechaEmision: '20/10/2024' },
+  { titulo: 'PROYECTOS', videoId: 'Ws7EAQ2tMGQ', fechaEmision: '23/10/2024' },
+  { titulo: 'USUARIOS', videoId: 'tMOWL29otuA', fechaEmision: '20/10/2024' },
+  { titulo: 'IMPORTAR ITEMS', videoId: 'lz1SPQfi7l0', fechaEmision: '20/10/2024' },
+  { titulo: 'CREAR ITEMS', videoId: '5SBE7Gv2Vfc', fechaEmision: '20/10/2024' },
+  { titulo: 'EDITAR ITEMS', videoId: 'v0IdQ8NvfNc', fechaEmision: '20/10/2024' },
+  { titulo: 'MATERIALES Y SERVICIOS', videoId: 'b9X5UVZ8as0', fechaEmision: '20/10/2024' },
+  { titulo: 'MANO DE OBRA', videoId: 'JiF_20kk2eQ', fechaEmision: '20/10/2024' },
+  { titulo: 'EQUIPOS, MAQUINARIAS Y HERRAMIENTAS', videoId: 'kQwHqxePNIY', fechaEmision: '22/10/2024' },
+  { titulo: 'GRUPOS', videoId: 'tcah8wj8yfQ', fechaEmision: '22/10/2024' },
+  { titulo: 'UNIDADES DE MEDIDA', videoId: 'TrJwHe5rDso', fechaEmision: '22/10/2024' },
+  { titulo: 'CATEGORIAS', videoId: 'KiQvy3VUrTE', fechaEmision: '22/10/2024' },
+  { titulo: 'INTRODUCCION A PRESUPUESTO', videoId: 'PjS3cl1TGAE', fechaEmision: '07/11/2024' },
+  { titulo: 'COMPUTO', videoId: 'X6r6SeEBWlU', fechaEmision: '13/11/2024' },
+  { titulo: 'PRESUPUESTO', videoId: 'dyAeOlyZjwU', fechaEmision: '13/11/2024' },
+  { titulo: 'COMITENTES', videoId: 'WNMwOKR_WFk', fechaEmision: '20/10/2024' },
+  { titulo: 'PROVEEDORES', videoId: '_S2D2gFLEgo', fechaEmision: '20/10/2024' },
+  { titulo: 'CONTRATISTAS', videoId: 'f-49RiJD-Bk', fechaEmision: '20/10/2024' },
+  { titulo: 'DOCUMENTOS', videoId: 'ZmGDD_GGuxE', fechaEmision: '25/10/2024' },
+  { titulo: 'CONFIGURACION', videoId: '76XuXDEw958', fechaEmision: '07/12/2024' },
+  { titulo: 'PEDIDOS', videoId: 'KQZJXFeJlaU', fechaEmision: '23/10/2024' },
+  { titulo: 'COTIZACIONES', videoId: '1lu5ErTXkYs', fechaEmision: '23/10/2024' },
+  { titulo: 'AUTORIZACION DE COTIZACIONES', videoId: 'vryFefyp9-4', fechaEmision: '23/10/2024' },
+  { titulo: 'ORDEN DE COMPRA', videoId: 'Mx1v1Z-KTFk', fechaEmision: '23/10/2024' },
+  { titulo: 'ENTRADA DE ALMACEN', videoId: 'AsP7iaLiPRM', fechaEmision: '23/10/2024' },
+  { titulo: 'SALIDAS DE ALMACEN', videoId: 'ulQKkzjDDhs', fechaEmision: '25/10/2024' },
+  { titulo: 'STOCK DE ALMACEN', videoId: 'fvMnDykjyHI', fechaEmision: '25/10/2024' },
+  { titulo: 'AVANCES', videoId: '1GHdjH325PE', fechaEmision: '26/10/2024' },
+  { titulo: 'PLANILLAS', videoId: '02tjIGB3vSY', fechaEmision: '23/10/2024' },
+  { titulo: 'RETENCIONES', videoId: '6uauTGyrlbY', fechaEmision: '26/10/2024' },
+  { titulo: 'INMUEBLES', videoId: 'vv-ZOlcDw50', fechaEmision: '25/10/2024' },
+  { titulo: 'CLIENTES', videoId: 'aYI_MNy9o0E', fechaEmision: '25/10/2024' },
+  { titulo: 'VENTA DE INMUEBLES', videoId: 'L4PTFrbCg74', fechaEmision: '28/10/2024' },
+  { titulo: 'GALERIA DE INMUEBLES', videoId: 'fkD-lVyvfHI', fechaEmision: '28/10/2024' },
 ];
 
 export default function RecursosVisuales() {
@@ -73,6 +74,7 @@ export default function RecursosVisuales() {
                 <div className={styles.playIcon}>▶</div>
               </div>
               <h3>{video.titulo}</h3>
+              <p className={styles.fechaEmision}>Video subido el: {video.fechaEmision}</p>
             </div>
           </div>
         ))}
