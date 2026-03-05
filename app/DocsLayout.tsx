@@ -7,18 +7,18 @@ import { usePathname } from "next/navigation";
 import styles from "./layout.module.css";
 
 const navItems = [
-  { 
-    href: "/introduccion", 
+  {
+    href: "/introduccion",
     label: "Introduccion",
     subItems: []
   },
-  { 
-    href: "/flujo-trabajo", 
+  {
+    href: "/flujo-trabajo",
     label: "Flujo de trabajo",
     subItems: []
   },
-  { 
-    href: "/primeros-pasos", 
+  {
+    href: "/primeros-pasos",
     label: "Primeros pasos",
     subItems: [
       { href: "/primeros-pasos/registro", label: "Registro de cuenta" },
@@ -29,8 +29,8 @@ const navItems = [
       { href: "/primeros-pasos/crear-primer-proyecto", label: "Crear tu primer proyecto" },
     ]
   },
-  { 
-    href: "/usuarios", 
+  {
+    href: "/usuarios",
     label: "Usuarios y permisos",
     subItems: [
       { href: "/usuarios/agregar", label: "Agregar usuarios" },
@@ -97,8 +97,9 @@ const navItems = [
       { href: "/almacen/stock", label: "Stock" },
     ]
   },
-  
-  {    href: "/cartera",
+
+  {
+    href: "/cartera",
     label: "Cartera",
     subItems: [
       { href: "/cartera/inmuebles", label: "Inmuebles" },
@@ -107,13 +108,18 @@ const navItems = [
       { href: "/cartera/galeria", label: "Galeria" },
     ]
   },
-  { 
-    href: "/recursos-visuales", 
+  {
+    href: "/ia-chat",
+    label: "Asistente IA",
+    subItems: []
+  },
+  {
+    href: "/recursos-visuales",
     label: "Video Tutoriales",
     subItems: []
   },
-  { 
-    href: "/faq", 
+  {
+    href: "/faq",
     label: "FAQ",
     subItems: []
   },
@@ -139,18 +145,18 @@ export function DocsLayout({
 
   const filteredNavItems = searchQuery.trim()
     ? navItems
-        .map((item) => {
-          const q = searchQuery.toLowerCase();
-          const topMatch = item.label.toLowerCase().includes(q);
-          const matchingSubItems = item.subItems.filter((s) =>
-            s.label.toLowerCase().includes(q)
-          );
-          if (topMatch) return item;
-          if (matchingSubItems.length > 0)
-            return { ...item, subItems: matchingSubItems };
-          return null;
-        })
-        .filter(Boolean) as typeof navItems
+      .map((item) => {
+        const q = searchQuery.toLowerCase();
+        const topMatch = item.label.toLowerCase().includes(q);
+        const matchingSubItems = item.subItems.filter((s) =>
+          s.label.toLowerCase().includes(q)
+        );
+        if (topMatch) return item;
+        if (matchingSubItems.length > 0)
+          return { ...item, subItems: matchingSubItems };
+        return null;
+      })
+      .filter(Boolean) as typeof navItems
     : navItems;
 
   const renderSearchBox = () => (
@@ -177,66 +183,61 @@ export function DocsLayout({
       )}
       <ul className="space-y-4">
         {filteredNavItems.map((item) => (
-        <li key={item.href}>
-          {item.subItems.length > 0 ? (
-            <button
-              onClick={() => toggleExpanded(item.href)}
-              className={`w-full flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${
-                isActive(item.href)
-                  ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
-                  : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
-              }`}
-            >
-              <span>{item.label}</span>
-              <span
-                className={`text-sm text-[#4db8a8] transition-transform ${
-                  expandedItems.includes(item.href) ? "rotate-90" : ""
-                }`}
+          <li key={item.href}>
+            {item.subItems.length > 0 ? (
+              <button
+                onClick={() => toggleExpanded(item.href)}
+                className={`w-full flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${isActive(item.href)
+                    ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
+                    : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+                  }`}
               >
-                →
-              </span>
-            </button>
-          ) : (
-            <Link
-              href={item.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${
-                isActive(item.href)
-                  ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
-                  : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
-              }`}
-            >
-              <span>{item.label}</span>
-              <span className="text-sm text-[#4db8a8]">→</span>
-            </Link>
-          )}
-
-          {item.subItems.length > 0 && (
-            <ul
-              className={`mt-2 space-y-2 border-l-2 border-gray-200 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${
-                expandedItems.includes(item.href) || searchQuery.trim() ? "max-h-96" : "max-h-0"
-              }`}
-            >
-              {item.subItems.map((subItem) => (
-                <li key={subItem.href}>
-                  <Link
-                    href={subItem.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block rounded-lg px-4 py-2 text-xs transition ${
-                      isActive(subItem.href)
-                        ? "bg-[#d4f1eb] text-[#2d2d2d]"
-                        : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
+                <span>{item.label}</span>
+                <span
+                  className={`text-sm text-[#4db8a8] transition-transform ${expandedItems.includes(item.href) ? "rotate-90" : ""
                     }`}
-                  >
-                    {subItem.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
+                >
+                  →
+                </span>
+              </button>
+            ) : (
+              <Link
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${isActive(item.href)
+                    ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
+                    : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+                  }`}
+              >
+                <span>{item.label}</span>
+                <span className="text-sm text-[#4db8a8]">→</span>
+              </Link>
+            )}
+
+            {item.subItems.length > 0 && (
+              <ul
+                className={`mt-2 space-y-2 border-l-2 border-gray-200 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${expandedItems.includes(item.href) || searchQuery.trim() ? "max-h-96" : "max-h-0"
+                  }`}
+              >
+                {item.subItems.map((subItem) => (
+                  <li key={subItem.href}>
+                    <Link
+                      href={subItem.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block rounded-lg px-4 py-2 text-xs transition ${isActive(subItem.href)
+                          ? "bg-[#d4f1eb] text-[#2d2d2d]"
+                          : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
+                        }`}
+                    >
+                      {subItem.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
     </>
   );
 
