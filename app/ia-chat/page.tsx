@@ -11,51 +11,16 @@ export default function IAChatPage() {
 
             <div className="space-y-6">
                 <h1 className="text-4xl font-semibold text-[#2d2d2d] md:text-5xl" style={{ fontFamily: "var(--font-display)" }}>
-                    Asistente de IA (Chat)
+                    Asistente IA
                 </h1>
 
                 <p className="text-lg text-gray-700">
-                    Esta ventana es una <strong>AI-powered chat application with training capabilities</strong>. A través de este chat, puedes interactuar directamente con la información de tus proyectos usando lenguaje natural. La plataforma cuenta con múltiples herramientas integradas (tools) que la IA utiliza para consultar datos, reportes y métricas en tiempo real.
+                    Esta ventana es una <strong>Aplicación de Chat con Inteligencia Artificial (IA)</strong>. A través de este chat, puedes interactuar directamente con la información de tus proyectos usando lenguaje natural. La plataforma cuenta con múltiples herramientas integradas (tools) que la IA utiliza para consultar datos, reportes y métricas en tiempo real.
                 </p>
 
                 <hr className="border-gray-200" />
 
-                <h2 className="text-2xl font-semibold text-[#2d2d2d] mt-8">Tools Actualmente Implementados — esfera-ai-api</h2>
-                <div className="bg-gray-50 p-4 rounded-xl border border-gray-200 mb-6 text-sm text-gray-600">
-                    <p><strong>Última actualización:</strong> 26 Febrero 2026</p>
-                    <p><strong>Archivo de registro central:</strong> <code>routers/gemini_utils.py</code> → <code>_TOOL_DECLARATIONS</code> / <code>_TOOL_FUNCTIONS</code></p>
-                </div>
-
                 <h3 className="text-xl font-semibold text-[#2d2d2d] mt-8">Catálogo Completo de Tools</h3>
-                <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200 border rounded-lg">
-                        <thead className="bg-gray-50">
-                            <tr>
-                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
-                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nombre de la Función</th>
-                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Archivo</th>
-                                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Descripción</th>
-                            </tr>
-                        </thead>
-                        <tbody className="bg-white divide-y divide-gray-200 text-sm">
-                            <tr><td className="px-4 py-3">1</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_avance_resumen</td><td className="px-4 py-3 text-gray-500">avanceTool.py</td><td className="px-4 py-3 text-gray-700">Estado de avance vs presupuesto cruzado por etapas.</td></tr>
-                            <tr><td className="px-4 py-3">2</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_inventario_stock</td><td className="px-4 py-3 text-gray-500">inventarioTool.py</td><td className="px-4 py-3 text-gray-700">Stock consolidado por material (entradas - salidas).</td></tr>
-                            <tr><td className="px-4 py-3">3</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_almacen_movimientos</td><td className="px-4 py-3 text-gray-500">inventarioTool.py</td><td className="px-4 py-3 text-gray-700">Historial detallado de ingresos y salidas físicas.</td></tr>
-                            <tr><td className="px-4 py-3">4</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_item_components</td><td className="px-4 py-3 text-gray-500">itemsTool.py</td><td className="px-4 py-3 text-gray-700">Detalle técnico (APU) de un ítem específico.</td></tr>
-                            <tr><td className="px-4 py-3">5</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_items_list</td><td className="px-4 py-3 text-gray-500">itemsTool.py</td><td className="px-4 py-3 text-gray-700">Buscador y listado de ítems por nombre o grupo.</td></tr>
-                            <tr><td className="px-4 py-3">6</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_ordenes_compra</td><td className="px-4 py-3 text-gray-500">comprasTool.py</td><td className="px-4 py-3 text-gray-700">Listado de OCs y detalle de materiales pedidos.</td></tr>
-                            <tr><td className="px-4 py-3">7</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_planillas_pago</td><td className="px-4 py-3 text-gray-500">planillasTool.py</td><td className="px-4 py-3 text-gray-700">Pagos realizados a mano de obra / contratistas.</td></tr>
-                            <tr><td className="px-4 py-3">8</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_personas_contacto</td><td className="px-4 py-3 text-gray-500">personasTool.py</td><td className="px-4 py-3 text-gray-700">Directorio de proveedores y contratistas.</td></tr>
-                            <tr><td className="px-4 py-3">9</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_presupuesto_resumen</td><td className="px-4 py-3 text-gray-500">presupuestoTool.py</td><td className="px-4 py-3 text-gray-700">Consolidado totalizada o detalle por ítem/etapa.</td></tr>
-                            <tr><td className="px-4 py-3">10</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_cronograma_fechas</td><td className="px-4 py-3 text-gray-500">cronogramaTool.py</td><td className="px-4 py-3 text-gray-700">Calendario de obra, fechas y dependencias.</td></tr>
-                            <tr><td className="px-4 py-3">11</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_proyectos_detalles</td><td className="px-4 py-3 text-gray-500">proyectosTool.py</td><td className="px-4 py-3 text-gray-700">Configuración de proyectos (áreas, indirectos, etapas).</td></tr>
-                            <tr><td className="px-4 py-3">12</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">get_help_from_kb</td><td className="px-4 py-3 text-gray-500">helpTool.py</td><td className="px-4 py-3 text-gray-700">Búsqueda en base de conocimiento de la plataforma.</td></tr>
-                            <tr><td className="px-4 py-3">13</td><td className="px-4 py-3 font-mono text-xs text-[#4db8a8]">manage_ai_training_data</td><td className="px-4 py-3 text-gray-500">trainingTool.py</td><td className="px-4 py-3 text-gray-700">Gestión de reglas de comportamiento o preferencias del usuario.</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3 className="text-xl font-semibold text-[#2d2d2d] mt-8">Detalles Técnicos por Área</h3>
                 <div className="grid md:grid-cols-2 gap-6 my-6">
                     <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
                         <h4 className="font-bold text-[#4db8a8] mb-3 flex items-center gap-2">🏗️ Gestión de Obra</h4>

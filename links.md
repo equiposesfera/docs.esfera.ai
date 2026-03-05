@@ -60,6 +60,6 @@ Este documento contiene todos los enlaces disponibles en la aplicación de docum
 | `/cartera/clientes` | CRM de prospectos y compradores |
 | `/cartera/ventas` | Gestión de contratos y promesas de compra |
 | `/cartera/galeria` | Repositorio de imágenes y renders |
-| `/ia-chat` | Asistente de IA (Chat) y catálogo de herramientas |
+| `/ia-chat` | Asistente IA y catálogo de herramientas |
 | `/recursos-visuales` | Video Tutoriales y Ayuda Visual |
 | `/faq` | Preguntas Frecuentes |

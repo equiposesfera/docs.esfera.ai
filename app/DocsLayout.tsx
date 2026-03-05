@@ -188,8 +188,8 @@ export function DocsLayout({
               <button
                 onClick={() => toggleExpanded(item.href)}
                 className={`w-full flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${isActive(item.href)
-                    ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
-                    : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+                  ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
+                  : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
                   }`}
               >
                 <span>{item.label}</span>
@@ -205,8 +205,8 @@ export function DocsLayout({
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`flex items-center justify-between rounded-2xl border px-5 py-4 text-base transition ${isActive(item.href)
-                    ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
-                    : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
+                  ? "border-[#4db8a8] bg-[#d4f1eb] text-[#2d2d2d]"
+                  : "border-transparent text-[#2d2d2d] hover:border-gray-200 hover:bg-gray-50"
                   }`}
               >
                 <span>{item.label}</span>
@@ -225,8 +225,8 @@ export function DocsLayout({
                       href={subItem.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block rounded-lg px-4 py-2 text-xs transition ${isActive(subItem.href)
-                          ? "bg-[#d4f1eb] text-[#2d2d2d]"
-                          : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
+                        ? "bg-[#d4f1eb] text-[#2d2d2d]"
+                        : "text-gray-700 hover:bg-[#d4f1eb] hover:text-[#2d2d2d]"
                         }`}
                     >
                       {subItem.label}
