@@ -12,11 +12,30 @@ export default function EquiposMaquinariasHerramientasPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Equipos, maquinarias y herramientas
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Gestiona tu catálogo de equipos, maquinarias y herramientas necesarios para ejecutar tus proyectos. Define costos horarios, especificaciones técnicas y disponibilidad para usar en tus análisis de precio unitario.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Gestiona tu catálogo de equipos, maquinarias y herramientas necesarios para ejecutar tus proyectos. Define costos horarios, especificaciones técnicas y disponibilidad para usar en tus análisis de precio unitario.
+       </p>
 
-      {/* ¿Qué son equipos, maquinarias y herramientas? */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Equipos, maquinarias y herramientas</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/kQwHqxePNIY"
+               title="EQUIPOS, MAQUINARIAS Y HERRAMIENTAS"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* ¿Qué son equipos, maquinarias y herramientas? */}
       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-3 font-semibold text-[#2d2d2d]">🚜 ¿Qué son equipos, maquinarias y herramientas en APU?</h4>
         <div className="space-y-2 text-sm text-gray-700">

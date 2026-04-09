@@ -39,14 +39,33 @@ export default function Paso4Page() {
         </div>
       </article>
 
-      {/* Introducción */}
-      <div className="space-y-4">
-        <p className="text-base leading-7 text-gray-700">
-          En ESFERA, la gestión de usuarios es fundamental para garantizar que tu equipo tenga acceso a las herramientas que necesita, con los permisos y responsabilidades adecuados. La plataforma te permite invitar miembros del equipo, asignarles roles específicos y controlar exactamente qué pueden hacer en cada módulo del sistema.
-        </p>
-      </div>
+       {/* Introducción */}
+       <div className="space-y-4">
+         <p className="text-base leading-7 text-gray-700">
+           En ESFERA, la gestión de usuarios es fundamental para garantizar que tu equipo tenga acceso a las herramientas que necesita, con los permisos y responsabilidades adecuados. La plataforma te permite invitar miembros del equipo, asigna roles específicos y controlar exactamente qué pueden hacer en cada módulo del sistema.
+         </p>
+       </div>
 
-      {/* Secciones principales */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Gestión de usuarios</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/tMOWL29otuA"
+               title="USUARIOS"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* Secciones principales */}
       <div className="grid gap-4 md:grid-cols-3">
         <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
           <div className="mb-3 text-3xl">👥</div>

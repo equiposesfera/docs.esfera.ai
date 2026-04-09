@@ -12,12 +12,31 @@ export default function PresupuestoVistaPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Visualización del presupuesto
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        La vista de presupuesto te permite revisar de forma consolidada todos los ítems, sus costos totales 
-        y el desglose de materiales, mano de obra y equipos, así como los totales por etapa.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         La vista de presupuesto te permite revisar de forma consolidada todos los ítems, sus costos totales
+         y el desglose de materiales, mano de obra y equipos, así como los totales por etapa.
+       </p>
 
-      {/* ¿Qué ves en la vista de presupuesto? */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Presupuesto</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/dyAeOlyZjwU"
+               title="PRESUPUESTO"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* ¿Qué ves en la vista de presupuesto? */}
       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-3 font-semibold text-[#2d2d2d]">📊 ¿Qué ves en esta vista?</h4>
         <p className="text-sm text-gray-700">

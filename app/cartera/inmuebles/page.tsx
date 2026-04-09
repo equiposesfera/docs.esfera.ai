@@ -11,12 +11,31 @@ export default function InmueblesCarteraPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Inmuebles
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        El catálogo de inmuebles lista todas las unidades del proyecto (departamentos, oficinas, locales, estacionamientos)
-        con su estado de disponibilidad, precio de venta y características principales.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         El catálogo de inmuebles lista todas las unidades del proyecto (departamentos, oficinas, locales, estacionamientos)
+         con su estado de disponibilidad, precio de venta y características principales.
+       </p>
 
-      <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Inmuebles</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/vv-ZOlcDw50"
+               title="INMUEBLES"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-3 font-semibold text-[#2d2d2d]">🏗️ ¿Qué es un inmueble en ESFERA?</h4>
         <p className="text-sm text-gray-700">
           Es cada unidad comercializable de tu proyecto inmobiliario. Un edificio puede tener múltiples inmuebles:

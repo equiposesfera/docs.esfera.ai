@@ -11,12 +11,31 @@ export default function GaleriaCarteraPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Galería
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        La Galería centraliza todo el material multimedia del proyecto: planos, renders, fotos de avance y material
-        publicitario. Mantén a tu equipo comercial con los recursos visuales siempre actualizados.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         La Galería centraliza todo el material multimedia del proyecto: planos, renders, fotos de avance y material
+         publicitario. Mantén a tu equipo comercial con los recursos visuales siempre actualizados.
+       </p>
 
-      <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Galería de inmuebles</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/fkD-lVyvfHI"
+               title="GALERIA DE INMUEBLES"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-3 font-semibold text-[#2d2d2d]">🖼️ ¿Para qué sirve la Galería?</h4>
         <p className="text-sm text-gray-700">
           La Galería permite que el equipo de marketing y ventas acceda en cualquier momento a los planos

@@ -11,11 +11,30 @@ export default function CrearPrimerProyectoPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Crear primer proyecto
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Una vez creada tu empresa, el último paso de la configuración inicial es crear tu primer proyecto. Los proyectos son la unidad de trabajo principal en ESFERA.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Una vez creada tu empresa, el último paso de la configuración inicial es crear tu primer proyecto. Los proyectos son la unidad de trabajo principal en ESFERA.
+       </p>
 
-      {/* Introducción */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Proyectos</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/Ws7EAQ2tMGQ"
+               title="PROYECTOS"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* Introducción */}
       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-2 font-semibold text-[#2d2d2d]">ℹ️ ¿Qué es un proyecto?</h4>
         <p className="text-sm text-gray-700">

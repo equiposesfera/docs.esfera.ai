@@ -15,15 +15,34 @@ export default function CrearEmpresaPage() {
         Después de verificar tu cuenta, el siguiente paso es crear tu empresa en ESFERA. Este es un paso fundamental para comenzar a usar la plataforma.
       </p>
 
-      {/* Introducción */}
-      <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
-        <h4 className="mb-2 font-semibold text-[#2d2d2d]">ℹ️ ¿Por qué crear una empresa?</h4>
-        <p className="text-sm text-gray-700">
-          La empresa es la entidad principal en ESFERA. Todos los proyectos, usuarios y configuraciones se organizan bajo una empresa. Puedes crear múltiples empresas si gestionas diferentes negocios.
-        </p>
-      </div>
+       {/* Introducción */}
+       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
+         <h4 className="mb-2 font-semibold text-[#2d2d2d]">ℹ️ ¿Por qué crear una empresa?</h4>
+         <p className="text-sm text-gray-700">
+           La empresa es la entidad principal en ESFERA. Todos los proyectos, usuarios y configuraciones se organizan bajo una empresa. Puedes crear múltiples empresas si gestionas diferentes negocios.
+         </p>
+       </div>
 
-      {/* Paso 1: Acceder al formulario */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Crear empresa</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/C-MrdJxmaUA"
+               title="EMPRESA"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* Paso 1: Acceder al formulario */}
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
           1. Completar datos de la empresa

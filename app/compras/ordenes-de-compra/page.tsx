@@ -12,12 +12,31 @@ export default function OrdenesDeCompraPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Órdenes de compra
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Las órdenes de compra son documentos formales que emites al proveedor seleccionado. Generadas
-        a partir de cotizaciones autorizadas, formalizan el compromiso de compra y permiten gestionar pagos.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Las órdenes de compra son documentos formales que emites al proveedor seleccionado. Generadas
+         a partir de cotizaciones autorizadas, formalizan el compromiso de compra y permiten gestionar pagos.
+       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Orden de compra</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/Mx1v1Z-KTFk"
+               title="ORDEN DE COMPRA"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
         <Image
           src="/compras/generar-orden-de-compra.png"
           alt="Generar orden de compra desde cotización autorizada"

@@ -12,11 +12,30 @@ export default function MaterialesServiciosAnalisisPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Materiales y servicios
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Los materiales y servicios son los insumos fundamentales que componen tus análisis de precio unitario. Gestiona tu catálogo de materiales físicos y servicios contratados para usarlos en tus ítems.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Los materiales y servicios son los insumos fundamentales que componen tus análisis de precio unitario. Gestiona tu catálogo de materiales físicos y servicios contratados para usarlos en tus ítems.
+       </p>
 
-      {/* ¿Qué son materiales y servicios? */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Materiales y servicios</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/b9X5UVZ8as0"
+               title="MATERIALES Y SERVICIOS"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* ¿Qué son materiales y servicios? */}
       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-3 font-semibold text-[#2d2d2d]">📋 ¿Qué son materiales y servicios?</h4>
         <div className="space-y-2 text-sm text-gray-700">

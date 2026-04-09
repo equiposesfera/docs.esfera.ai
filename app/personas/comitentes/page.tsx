@@ -12,12 +12,31 @@ export default function ComitentesPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Registro de comitentes
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Los comitentes son los clientes o propietarios que encargan la obra. En ESFERA puedes registrar sus datos
-        para asociarlos a proyectos, contratos y seguimiento financiero.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Los comitentes son los clientes o propietarios que encargan la obra. En ESFERA puedes registrar sus datos
+         para asociarlos a proyectos, contratos y seguimiento financiero.
+       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Comitentes</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/WNMwOKR_WFk"
+               title="COMITENTES"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
         <Image
           src="/personas/formulario-comitente.png"
           alt="Formulario de registro de comitentes"

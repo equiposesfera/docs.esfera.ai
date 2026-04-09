@@ -11,11 +11,30 @@ export default function UnidadesDeMedidaPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Unidades de medida
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Gestiona las unidades de medida para ítems, materiales, mano de obra y equipos. Define y personaliza las unidades que corresponden a tu metodología de trabajo.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Gestiona las unidades de medida para ítems, materiales, mano de obra y equipos. Define y personaliza las unidades que corresponden a tu metodología de trabajo.
+       </p>
 
-      {/* ¿Qué son unidades de medida? */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Unidades de medida</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/TrJwHe5rDso"
+               title="UNIDADES DE MEDIDA"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* ¿Qué son unidades de medida? */}
       <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
         <h4 className="mb-3 font-semibold text-[#2d2d2d]">📏 ¿Qué son las unidades de medida?</h4>
         <p className="text-sm text-gray-700">

@@ -11,11 +11,30 @@ export default function InvitarUsuariosPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Agregar usuarios
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Invita a los miembros de tu equipo a tu proyecto en ESFERA. Puedes agregar usuarios de forma individual o importarlos en lotes, y asignarles roles específicos.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Invita a los miembros de tu equipo a tu proyecto en ESFERA. Puedes agregar usuarios de forma individual o importarlos en lotes, y asignarles roles específicos.
+       </p>
 
-      {/* Paso 1: Acceder a usuarios */}
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Gestión de usuarios</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/tMOWL29otuA"
+               title="USUARIOS"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       {/* Paso 1: Acceder a usuarios */}
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
           1. Acceder a la sección de usuarios

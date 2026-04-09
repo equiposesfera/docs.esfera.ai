@@ -12,12 +12,31 @@ export default function EntradasAlmacenPage() {
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
         Entradas de almacén
       </h2>
-      <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Las entradas registran los materiales que ingresan al almacén desde órdenes de compra pagadas.
-        Cada entrada aumenta la cantidad disponible de ese material en el inventario.
-      </p>
+       <p className="text-base leading-7 text-gray-700 md:text-lg">
+         Las entradas registran los materiales que ingresan al almacén desde órdenes de compra pagadas.
+         Cada entrada aumenta la cantidad disponible de ese material en el inventario.
+       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
+       {/* Video Container */}
+       <div className="space-y-4">
+         <div className="rounded-2xl border-2 border-[#4db8a8] bg-gradient-to-br from-[#d4f1eb] to-[#e8f5f1] p-6 shadow-lg">
+           <h2 className="text-xl font-semibold text-[#2d2d2d]">Tutorial: Entrada de almacén</h2>
+           <div className="relative bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+             <iframe
+               width="100%"
+               height="100%"
+               src="https://www.youtube.com/embed/AsP7iaLiPRM"
+               title="ENTRADA DE ALMACEN"
+               frameBorder="0"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+               allowFullScreen
+               className="w-full h-full"
+             ></iframe>
+           </div>
+         </div>
+       </div>
+
+       <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
         <Image
           src="/almacen/entradas-almacen.png"
           alt="Registro de entradas de almacén"
