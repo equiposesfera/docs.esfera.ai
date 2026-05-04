@@ -267,6 +267,24 @@ export default function ComputoPage() {
               Suprime líneas del cómputo. Debes confirmar la eliminación para evitar cambios accidentales.
             </p>
           </div>
+
+          <div className="rounded-2xl border-2 border-gray-200 bg-white p-5">
+            <div className="mb-3 text-2xl">⬇️</div>
+            <h4 className="mb-2 font-semibold text-[#2d2d2d]">Exportar a Excel</h4>
+            <p className="text-sm text-gray-700">
+              Descarga el cómputo completo en formato Excel para revisarlo, compartirlo o editarlo fuera del sistema.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border-2 border-gray-200 bg-white p-5">
+            <div className="mb-3 text-2xl">⬆️</div>
+            <h4 className="mb-2 font-semibold text-[#2d2d2d]">Importar desde Excel</h4>
+            <p className="text-sm text-gray-700">
+              Para importar el cómputo desde Excel, primero exporta el archivo desde la pantalla de Cómputo,
+              modificá los valores en el archivo descargado, guardalo y luego subilo haciendo clic en el botón Importar.
+              El archivo debe tener el mismo formato que el exportado.
+            </p>
+          </div>
         </div>
       </div>
 
