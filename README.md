@@ -1,24 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# docs.esfera.ai
 
-## Getting Started
+Sitio de documentación para [Esfera](https://docs.esfera.ai), construido con Next.js App Router y desplegado en GitHub Pages.
 
-First, run the development server:
+## Desarrollo
 
 ```bash
+pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en el navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 16** — App Router, exportación estática (`output: export`)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **pnpm**
 
-## Learn More
+## Despliegue
 
-To learn more about Next.js, take a look at the following resources:
+El sitio se despliega automáticamente en GitHub Pages al hacer push a `main` mediante el workflow [`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El build genera archivos estáticos en `./out` usando `STATIC_EXPORT=true`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## SEO
+
+- Sitemap: `https://docs.esfera.ai/sitemap.xml` — generado desde [`app/sitemap.ts`](app/sitemap.ts)
+- Robots: `https://docs.esfera.ai/robots.txt` — generado desde [`app/robots.ts`](app/robots.ts)
+
+## Estructura
+
+```
+app/
+├── introduccion/         # Página de inicio
+├── primeros-pasos/       # Registro, suscripción, configuración inicial
+├── presupuesto/          # Presupuesto, cómputo, cronograma, ejecución
+├── analisis-precio-unitario/  # APU: materiales, mano de obra, equipos, ítems
+├── compras/              # Pedidos, cotizaciones, órdenes, autorizaciones
+├── obra/                 # Avances, planillas, retenciones
+├── almacen/              # Entradas, salidas, stock
+├── cartera/              # Clientes, inmuebles, ventas, galería
+├── personas/             # Comitentes, contratistas, proveedores
+├── usuarios/             # Gestión de usuarios y permisos
+├── flujo-trabajo/
+├── ia-chat/
+├── recursos-visuales/
+└── faq/
+```
