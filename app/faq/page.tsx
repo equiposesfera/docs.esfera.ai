@@ -119,6 +119,39 @@ const faqCategories = [
       },
     ],
   },
+  {
+    category: "Planes y membresía",
+    faqs: [
+      {
+        question: "¿Qué incluye la cuenta gratuita de Esfera?",
+        answer: "1 empresa y 1 proyecto por usuario, acceso a la empresa y proyecto demo cuando aplique, 100 MB de almacenamiento, presupuesto ilimitado y usuarios secundarios ilimitados.",
+      },
+      {
+        question: "¿Qué es el addon Esfera Plus?",
+        answer: "Es un addon temporal de USD 30 al mes que habilita múltiples proyectos y empresas, 10 GB de almacenamiento y evita que tus proyectos expiren por inactividad mientras esté pagado.",
+      },
+      {
+        question: "¿Cómo funciona la Consultoría Esfera?",
+        answer: "Tiene un precio a cotizar según el cliente y la necesidad, incluye el addon Esfera Plus, y su administración y pagos se gestionan fuera del sistema. Al terminar, puedes contratar Esfera Plus para mantener tus proyectos.",
+      },
+      {
+        question: "¿Qué pasa si un proyecto queda inactivo?",
+        answer: "Se te avisará por email a los 30, 45, 57 y 59 días de inactividad. A los 60 días se eliminan el usuario principal, usuarios secundarios, empresa, proyecto y todos los datos asociados, con una notificación final.",
+      },
+      {
+        question: "¿Puedo evitar que mi proyecto se elimine por inactividad?",
+        answer: "Sí, iniciando sesión periódicamente en el proyecto o manteniendo activo y pagado el addon Esfera Plus, que impide la expiración mientras esté vigente.",
+      },
+      {
+        question: "Si tuve Esfera Plus y dejo de pagarlo, ¿pierdo mis proyectos?",
+        answer: "Vuelve a aplicarse la regla de 60 días de inactividad. Si conservas un único proyecto activo no se elimina tu usuario; si tienes varios proyectos, deberás elegir uno para conservar en tu cuenta y los demás quedarán sujetos a esa regla, pudiendo restaurarse si vuelves a pagar el addon.",
+      },
+      {
+        question: "¿Puedo recuperar un proyecto eliminado por inactividad?",
+        answer: "Si el usuario tuvo Esfera Plus, al volver a contratarlo los proyectos correspondientes pueden restaurarse conforme a la política interna de recuperación.",
+      },
+    ],
+  },
 ];
 
 export default function FAQPage() {
@@ -144,6 +177,28 @@ export default function FAQPage() {
           </div>
         </div>
       ))}
+      <div className="space-y-4">
+        <h4 className="text-lg font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
+          Términos y condiciones
+        </h4>
+        <div className="rounded-2xl border border-gray-200 bg-white px-5 py-4">
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-gray-600">
+            <li>Al crear una cuenta y usar Esfera.AI, aceptas los Términos; debes ser mayor de 18 años y proporcionar datos verídicos.</li>
+            <li>Eres responsable de tu cuenta y credenciales, y debes usar la plataforma de forma legal, sin dañar ni vulnerar el sistema.</li>
+            <li>Esfera.AI recopila y usa tus datos para dar acceso a tus proyectos, personalizar el servicio, brindar soporte y proteger la seguridad de la plataforma.</li>
+            <li>Tus datos se protegen con medidas técnicas de seguridad (cifrado, control de acceso) y solo se comparten con proveedores de confianza o por obligación legal.</li>
+            <li>Esfera puede modificar sus servicios y estos Términos, notificando previamente; el uso continuado implica tu aceptación de los cambios.</li>
+          </ul>
+          <a
+            href="https://esfera.ai/#/legal#terminos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block text-sm font-semibold text-blue-600 hover:underline"
+          >
+            Leer términos y condiciones completos →
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
