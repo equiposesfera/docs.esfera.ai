@@ -67,7 +67,7 @@ export default function RecursosVisuales() {
         <ul className="list-inside list-disc space-y-1 text-sm text-gray-700">
           <li>Como el sistema de Esfera.AI está en actualización continua, algunos contenidos pueden tener alguna variación.</li>
           <li>Estamos trabajando constantemente para mantener la información actualizada.</li>
-          <li>Si tienes alguna dudas, no dudes en contactar al <a href="https://wa.me/15557021023?text=Ayuda" target="_blank" rel="noopener noreferrer" className="font-bold">soporte</a> para poder ayudarte.</li>
+          <li>Si tienes alguna dudas, no dudes en contactar al <a href="https://wa.me/14845691555?text=Ayuda" target="_blank" rel="noopener noreferrer" className="font-bold">soporte</a> para poder ayudarte.</li>
         </ul>
       </div>
       <div className={styles.grid}>
