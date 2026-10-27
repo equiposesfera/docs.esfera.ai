@@ -8,11 +8,11 @@ const faqCategories = [
       },
       {
         question: "¿Puedo agregar múltiples proyectos?",
-        answer: "Sí, puedes crear ilimitados proyectos según tu plan. Cada proyecto tiene su presupuesto, equipo y historial independiente.",
+        answer: "La cuenta gratuita incluye 1 proyecto por usuario. Para tener múltiples proyectos y empresas necesitas el addon Esfera Plus. Cada proyecto tiene su presupuesto, equipo y historial independiente.",
       },
       {
         question: "¿Cómo me creo una suscripción?",
-        answer: "La suscripción se completa después del registro. Elige plan, ingresa método de pago y accede a todos los módulos inmediatamente.",
+        answer: "No necesitas suscripción para empezar: al registrarte puedes usar ESFERA gratis, sin tarjeta. Si necesitas más capacidad, puedes sumar el addon Esfera Plus (USD 30/mes o USD 300/año) o solicitar una implementación profesional.",
       },
       {
         question: "¿Qué hago si olvido mi contraseña?",
@@ -128,7 +128,7 @@ const faqCategories = [
       },
       {
         question: "¿Qué es el addon Esfera Plus?",
-        answer: "Es un addon temporal de USD 30 al mes que habilita múltiples proyectos y empresas, 10 GB de almacenamiento y evita que tus proyectos expiren por inactividad mientras esté pagado.",
+        answer: "Es un addon de USD 30 al mes (o USD 300 al año) que habilita múltiples proyectos y empresas, 10 GB de almacenamiento y evita que tus proyectos expiren por inactividad mientras esté pagado.",
       },
       {
         question: "¿Cómo funciona la Consultoría Esfera?",

@@ -6,7 +6,7 @@ La configuración básica toma entre 15–30 minutos: crear tu cuenta, configura
 
 ## ¿Puedo agregar múltiples proyectos?
 
-Sí, puedes crear proyectos ilimitados según tu plan. Cada proyecto tiene su presupuesto, equipo y historial independiente.
+La cuenta gratuita incluye 1 proyecto por usuario. Para tener múltiples proyectos y empresas necesitas el addon Esfera Plus. Cada proyecto tiene su presupuesto, equipo y historial independiente.
 
 ## ¿Cómo funciona el análisis de precio unitario?
 
@@ -66,7 +66,7 @@ Crea roles personalizados con permisos específicos: Admin, Gerente de obra, Con
 
 ## ¿Cómo me creo una suscripción?
 
-La suscripción se completa después del registro. Elige un plan, ingresa el método de pago y accede a todos los módulos inmediatamente.
+No necesitas suscripción para empezar: al registrarte puedes usar ESFERA gratis, sin tarjeta. Si necesitas más capacidad, puedes sumar el addon Esfera Plus (USD 30/mes o USD 300/año) o solicitar una implementación profesional.
 
 ## ¿Qué hago si olvido mi contraseña?
 

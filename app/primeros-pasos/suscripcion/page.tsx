@@ -1,4 +1,30 @@
-import Image from "next/image";
+const h3Class = "text-2xl font-semibold text-[#2d2d2d]";
+const pClass = "text-base leading-7 text-gray-700";
+
+const freeFeatures = [
+  "1 empresa por usuario",
+  "1 proyecto por usuario",
+  "Presupuestos ilimitados",
+  "100 MB de almacenamiento",
+  "Usuarios secundarios ilimitados",
+  "Acceso a empresa y proyecto demo",
+];
+
+const plusFeatures = [
+  "Múltiples empresas y proyectos",
+  "10 GB de almacenamiento",
+  "Proyectos activos mientras el addon esté pagado",
+  "Sin expiración por inactividad",
+];
+
+const implementationFeatures = [
+  "Diagnóstico operativo",
+  "Setup y configuración inicial",
+  "Carga o migración de datos",
+  "Capacitación al equipo",
+  "Acompañamiento y soporte",
+  "Integraciones bajo cotización",
+];
 
 export default function SuscripcionPage() {
   return (
@@ -6,189 +32,134 @@ export default function SuscripcionPage() {
       <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-gray-500">
         <span>Primeros pasos</span>
         <span className="h-1 w-1 rounded-full bg-[#4db8a8]"></span>
-        <span>Actualizado Feb 2026</span>
+        <span>Actualizado Oct 2026</span>
       </div>
       <h2 className="text-3xl font-semibold text-[#2d2d2d] md:text-4xl" style={{ fontFamily: "var(--font-display)" }}>
-        Suscripción
+        Suscripción y planes
       </h2>
       <p className="text-base leading-7 text-gray-700 md:text-lg">
-        Conoce los planes de suscripción disponibles y cómo aprovechar tu prueba gratuita de 60 días en ESFERA.
+        ESFERA se puede usar gratis y de forma autoasistida. Cuando necesites más capacidad o ayuda para adoptar la plataforma en tu empresa, puedes sumar el addon Esfera Plus o contratar una implementación profesional.
       </p>
 
-      {/* Prueba gratuita */}
       <div className="space-y-4">
-        <h3 className="text-2xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-          Prueba gratuita de 60 días
+        <h3 className={h3Class} style={{ fontFamily: "var(--font-display)" }}>
+          Tres formas de usar ESFERA
         </h3>
-        <p className="text-base leading-7 text-gray-700">
-          Al registrarte y crear tu primer proyecto, automáticamente obtienes acceso a una prueba gratuita de 60 días con todas las funcionalidades de la plataforma. Este período de prueba es exclusivo para tu primer proyecto.
-        </p>
-        <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-          <Image
-            src="/registro-creacion_usuario_empresa_proyecto/recuadro_60d_gratis.png"
-            alt="Promoción de 60 días gratis"
-            width={1200}
-            height={800}
-            className="w-full"
-          />
-        </div>
-        <div className="rounded-2xl border-l-4 border-[#f59e0b] bg-orange-50 px-6 py-4">
-          <p className="text-sm text-gray-700">
-            <strong>⏰ Importante:</strong> Los 60 días gratis aplican únicamente a tu primer proyecto. Cuando este período venza o si deseas crear nuevos proyectos antes de que expire, deberás elegir uno de nuestros planes de suscripción.
-          </p>
-        </div>
-      </div>
-
-      {/* Información sobre planes */}
-      <div className="space-y-4">
-        <h3 className="text-2xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-          Planes de suscripción disponibles
-        </h3>
-        <p className="text-base leading-7 text-gray-700">
-          Una vez que se venza tu período de prueba de 60 días o si deseas crear proyectos adicionales antes de que termine, deberás elegir uno de nuestros tres planes de suscripción. <strong>Cada plan está vinculado a un proyecto específico</strong>, por lo que si gestionas múltiples proyectos, necesitarás adquirir un plan para cada uno.
-        </p>
-        <div className="overflow-hidden rounded-2xl border border-gray-200 shadow-sm">
-          <Image
-            src="/registro-creacion_usuario_empresa_proyecto/planes_disponibles.png"
-            alt="Planes de suscripción disponibles"
-            width={1200}
-            height={800}
-            className="w-full"
-          />
-        </div>
-      </div>
-
-      {/* Detalles de los planes */}
-      <div className="space-y-4">
-        <h3 className="text-2xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-          Características de cada plan
-        </h3>
-        <p className="text-base leading-7 text-gray-700 mb-4">
-          Todos los planes incluyen acceso a todas las funcionalidades de ESFERA. Lo que diferencia a cada plan es la capacidad de usuarios, almacenamiento de datos y límite de presupuesto del proyecto.
+        <p className={pClass}>
+          El software es el mismo en todos los casos y no requiere tarjeta para empezar. Lo que cambia es la capacidad y el nivel de acompañamiento.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h4 className="mb-3 text-lg font-semibold text-[#2d2d2d]">Plan Emprendedor</h4>
-            <p className="mb-4 text-xs font-semibold text-[#4db8a8] uppercase">Para empezar</p>
-            <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-600 uppercase">Usuarios simultáneos</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">8</p>
-                <p className="mt-1 text-xs text-gray-600">usuarios activos</p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-600 uppercase">Almacenamiento</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">100 MB</p>
-                <p className="mt-1 text-xs text-gray-600">para datos y documentos</p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-600 uppercase">Presupuesto máximo</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">$500K</p>
-                <p className="mt-1 text-xs text-gray-600">por proyecto</p>
-              </div>
-            </div>
+            <p className="mb-2 text-xs font-semibold uppercase text-[#4db8a8]">Gratis</p>
+            <h4 className="mb-3 text-lg font-semibold text-[#2d2d2d]">Uso autoasistido</h4>
+            <p className="text-3xl font-bold text-[#2d2d2d]">USD 0</p>
+            <p className="mb-4 text-xs text-gray-600">para siempre</p>
+            <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
+              {freeFeatures.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
           </div>
           <div className="rounded-2xl border-2 border-[#4db8a8] bg-[#d4f1eb] p-6 shadow-sm">
             <div className="mb-2 inline-block rounded-full bg-[#4db8a8] px-3 py-1 text-xs font-semibold text-white">
-              Más popular
+              Addon
             </div>
-            <h4 className="mb-3 text-lg font-semibold text-[#2d2d2d]">Plan Constructor</h4>
-            <p className="mb-4 text-xs font-semibold text-[#4db8a8] uppercase">Recomendado</p>
-            <div className="space-y-4">
-              <div className="rounded-lg border border-[#4db8a8] bg-white p-3">
-                <p className="text-xs font-semibold text-[#4db8a8] uppercase">Usuarios simultáneos</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">12</p>
-                <p className="mt-1 text-xs text-gray-600">usuarios activos</p>
-              </div>
-              <div className="rounded-lg border border-[#4db8a8] bg-white p-3">
-                <p className="text-xs font-semibold text-[#4db8a8] uppercase">Almacenamiento</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">1 GB</p>
-                <p className="mt-1 text-xs text-gray-600">para datos y documentos</p>
-              </div>
-              <div className="rounded-lg border border-[#4db8a8] bg-white p-3">
-                <p className="text-xs font-semibold text-[#4db8a8] uppercase">Presupuesto máximo</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">$2M</p>
-                <p className="mt-1 text-xs text-gray-600">por proyecto</p>
-              </div>
-            </div>
+            <h4 className="mb-3 text-lg font-semibold text-[#2d2d2d]">Esfera Plus</h4>
+            <p className="text-3xl font-bold text-[#2d2d2d]">USD 30 / mes</p>
+            <p className="mb-4 text-xs text-gray-600">o USD 300 / año</p>
+            <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
+              {plusFeatures.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
           </div>
           <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h4 className="mb-3 text-lg font-semibold text-[#2d2d2d]">Plan Empresarial</h4>
-            <p className="mb-4 text-xs font-semibold text-[#4db8a8] uppercase">Para grandes proyectos</p>
-            <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-600 uppercase">Usuarios simultáneos</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">16</p>
-                <p className="mt-1 text-xs text-gray-600">usuarios ilimitados</p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-600 uppercase">Almacenamiento</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">10 GB</p>
-                <p className="mt-1 text-xs text-gray-600">para datos y documentos</p>
-              </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-600 uppercase">Presupuesto máximo</p>
-                <p className="mt-1 text-2xl font-bold text-[#2d2d2d]">Ilimitado</p>
-                <p className="mt-1 text-xs text-gray-600">sin restricciones</p>
-              </div>
-            </div>
+            <p className="mb-2 text-xs font-semibold uppercase text-[#4db8a8]">Servicio B2B</p>
+            <h4 className="mb-3 text-lg font-semibold text-[#2d2d2d]">Implementación profesional</h4>
+            <p className="text-3xl font-bold text-[#2d2d2d]">Desde USD 2.500</p>
+            <p className="mb-4 text-xs text-gray-600">cotización por alcance</p>
+            <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
+              {implementationFeatures.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
           </div>
         </div>
+        <p className="text-sm text-gray-600">
+          Precios en dólares estadounidenses (USD). Consulta siempre los valores vigentes en{" "}
+          <a href="https://esfera.ai/precios/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#4db8a8] underline">
+            esfera.ai/precios
+          </a>
+          .
+        </p>
       </div>
 
-      {/* Modelo de planes por proyecto */}
       <div className="space-y-4">
-        <h3 className="text-2xl font-semibold text-[#2d2d2d]" style={{ fontFamily: "var(--font-display)" }}>
-          Un plan por proyecto
+        <h3 className={h3Class} style={{ fontFamily: "var(--font-display)" }}>
+          Uso gratuito
         </h3>
-        <p className="text-base leading-7 text-gray-700">
-          Es importante entender que el modelo de suscripción de ESFERA es <strong>por proyecto</strong>. Esto significa que:
+        <p className={pClass}>
+          Al registrarte puedes crear tu cuenta, tu empresa y tu primer proyecto sin costo. Cada usuario cuenta con 1 empresa y 1 proyecto, presupuestos y usuarios secundarios ilimitados, 100 MB de almacenamiento y acceso a una empresa y proyecto demo para explorar la plataforma.
         </p>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-gray-200 bg-white p-6">
-            <div className="mb-3 text-2xl">✅</div>
-            <h4 className="mb-2 font-semibold text-[#2d2d2d]">Ventajas</h4>
-            <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
-              <li>Flexibilidad para elegir diferentes planes según cada proyecto</li>
-              <li>Solo pagas por lo que necesitas en cada proyecto</li>
-              <li>Puedes cambiar de plan entre proyectos</li>
-            </ul>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-orange-50 p-6">
-            <div className="mb-3 text-2xl">⚠️</div>
-            <h4 className="mb-2 font-semibold text-[#2d2d2d]">Importante</h4>
-            <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
-              <li>Cada proyecto requiere su propio plan activo</li>
-              <li>Con 3 proyectos necesitarás 3 planes diferentes</li>
-              <li>El plan vence por proyecto, no globalmente</li>
-            </ul>
-          </div>
-        </div>
+        <p className={pClass}>
+          El acceso gratuito no incluye soporte humano, capacitación personalizada, migración de datos, carga de APUs, configuración guiada, integraciones ni acompañamiento operativo. Para eso existe el servicio de implementación.
+        </p>
       </div>
 
-      {/* Ejemplo de múltiples proyectos */}
-      <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
-        <h4 className="mb-3 font-semibold text-[#2d2d2d]">📋 Ejemplo práctico</h4>
-        <p className="mb-3 text-sm text-gray-700">
-          Si tienes una empresa constructora con 3 proyectos:
+      <div className="space-y-4">
+        <h3 className={h3Class} style={{ fontFamily: "var(--font-display)" }}>
+          Addon Esfera Plus
+        </h3>
+        <p className={pClass}>
+          Esfera Plus amplía la capacidad de tu cuenta: habilita <strong>múltiples empresas y proyectos</strong>, eleva el almacenamiento a <strong>10 GB</strong> y mantiene tus proyectos activos mientras el addon esté pagado, sin expiración por inactividad. Cuesta USD 30 al mes o USD 300 al año.
         </p>
-        <div className="space-y-2 text-sm text-gray-700">
-          <p className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#4db8a8]"></span>
-            <strong>Proyecto 1 (Casa):</strong> Plan Constructor
-          </p>
-          <p className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#4db8a8]"></span>
-            <strong>Proyecto 2 (Edificio):</strong> Plan Emprendedor
-          </p>
-          <p className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[#4db8a8]"></span>
-            <strong>Proyecto 3 (Reforma):</strong> Plan Empresarial
+        <p className={pClass}>
+          Para contratarlo, escríbenos por WhatsApp o desde{" "}
+          <a href="https://esfera.ai/precios/" target="_blank" rel="noopener noreferrer" className="font-semibold text-[#4db8a8] underline">
+            la página de precios
+          </a>
+          .
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={h3Class} style={{ fontFamily: "var(--font-display)" }}>
+          Implementación profesional
+        </h3>
+        <p className={pClass}>
+          Pensada para constructoras que necesitan dejar ESFERA configurada, cargada y adoptada por su equipo. Se cotiza según el alcance, la cantidad de obras, la carga inicial, la capacitación, el soporte y las integraciones. La implementación no reemplaza al software gratuito: es un servicio adicional que se contrata aparte, desde USD 2.500.
+        </p>
+      </div>
+
+      <div className="space-y-4">
+        <h3 className={h3Class} style={{ fontFamily: "var(--font-display)" }}>
+          Inactividad de proyectos
+        </h3>
+        <p className={pClass}>
+          La inactividad se mide <strong>por proyecto</strong>: si ningún usuario inicia sesión en un proyecto durante 60 días, el proyecto y sus datos se eliminan.
+        </p>
+        <div className="rounded-2xl border-l-4 border-[#f59e0b] bg-orange-50 px-6 py-4">
+          <p className="mb-2 text-sm font-semibold text-gray-700">⏰ Avisos por email</p>
+          <p className="text-sm text-gray-700">
+            Recibirás avisos a los 30, 45, 57 y 59 días de inactividad. A los 60 días se eliminan el usuario principal, los usuarios secundarios, la empresa, el proyecto y todos los datos asociados, con una notificación final.
           </p>
         </div>
-        <p className="mt-3 text-sm text-gray-700">
-          Pagarías 3 planes diferentes, uno para cada proyecto, según las necesidades de cada uno.
-        </p>
+        <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
+          <li>Iniciar sesión periódicamente en el proyecto evita la eliminación.</li>
+          <li>Con Esfera Plus activo y pagado, los proyectos no expiran por inactividad.</li>
+          <li>
+            Si dejas de pagar Esfera Plus vuelve a aplicarse la regla de 60 días. Si conservas un único proyecto, tu usuario no se elimina; si tienes varios, deberás elegir uno para conservar y los demás quedan sujetos a la regla. Pueden restaurarse si vuelves a contratar el addon.
+          </li>
+        </ul>
+      </div>
+
+      <div className="rounded-2xl border-l-4 border-[#4db8a8] bg-[#d4f1eb] px-6 py-4">
+        <h4 className="mb-2 font-semibold text-[#2d2d2d]">📋 ¿Cuál me conviene?</h4>
+        <ul className="list-inside list-disc space-y-2 text-sm text-gray-700">
+          <li><strong>Uso autoasistido:</strong> profesionales independientes y equipos pequeños con una obra que quieren explorar y avanzar por su cuenta.</li>
+          <li><strong>Esfera Plus:</strong> si gestionas varias obras o empresas, necesitas más almacenamiento o no quieres que tus proyectos expiren.</li>
+          <li><strong>Implementación:</strong> constructoras con obra activa que necesitan migrar información, capacitar a sus áreas y adoptar la plataforma con acompañamiento.</li>
+        </ul>
       </div>
     </div>
   );

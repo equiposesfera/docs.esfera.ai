@@ -9,7 +9,7 @@ Este documento contiene todos los enlaces disponibles en la aplicación de docum
 | `/primeros-pasos` | Configuración inicial y conceptos básicos |
 | `/primeros-pasos/registro` | Registro de cuenta de usuario |
 | `/primeros-pasos/verificacion` | Verificación de correo electrónico |
-| `/primeros-pasos/suscripcion` | Gestión de planes y suscripción |
+| `/primeros-pasos/suscripcion` | Planes (gratis, Esfera Plus, implementación) y suscripción |
 | `/primeros-pasos/olvido-contrasena` | Recuperación de acceso |
 | `/primeros-pasos/crear-empresa` | Configuración de la empresa |
 | `/primeros-pasos/crear-primer-proyecto` | Creación del proyecto inicial |
